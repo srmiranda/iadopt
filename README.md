@@ -1,0 +1,1 @@
+![Build Status](https://codeship.com/projects/104154/status?branch=master)![Code Climate](https://codeclimate.com/github/srmiranda/iadopt.png) ![Coverage Status](https://coveralls.io/repos/srmiranda/iadopt/badge.png)
