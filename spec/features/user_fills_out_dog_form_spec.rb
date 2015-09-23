@@ -24,6 +24,7 @@ feature 'view dog request form', %Q{
   end
 
   scenario 'user fails to fill out form correctly' do
+    visit root_path
     click_link "Find me a dog!"
   end
 end
