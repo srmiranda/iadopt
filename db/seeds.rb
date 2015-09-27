@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
 breeds = [
@@ -57,10 +50,9 @@ breeds = [
 "Siberian Husky",
 "Weimaraner",
 "West Highland White Terrier",
-"Yorkshire Terrier"
+"Yorkshire Terrier",
+"Mixed-Breed"
 ]
-
-name = Faker::Name.first_name
 
 sizes = [
   "small",
@@ -87,4 +79,8 @@ fixed = [
 
 shelter_id = rand(1..60)
 
-Dog.create(name: name, breed: breed.sample, size: sizes.sample, kids: kids.sample, age: rand(0.5..10.0), gender: gender.sample, fixed: fixed.sample, shelter_id: rand(1..60))
+1000.times do
+  Dog.create(name: Faker::Name.first_name, breed: breeds.sample, size: sizes.sample,
+  kids: kids.sample, age: rand(0.5..10.0).round(1), gender: gender.sample,
+  fixed: fixed.sample, shelter_id: rand(1..60))
+end
