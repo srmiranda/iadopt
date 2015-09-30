@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user signs in', %Q{
+feature 'user signs in', %{
   As a current or new user,
   I want to visit the home page of iAdopt,
   So that I can sign in or sign up to this website.

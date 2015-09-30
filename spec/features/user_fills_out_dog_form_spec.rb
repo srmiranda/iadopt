@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'view dog request form', %Q{
+feature 'view dog request form', %{
   As a user
   I want to visit the main page
   So that I can fill in what kind of dog I want

@@ -44,20 +44,20 @@ ActiveRecord::Schema.define(version: 20150927213238) do
   add_index "shelters", ["name"], name: "index_shelters_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",                                                                                        null: false
-    t.string   "encrypted_password",     default: "",                                                                                        null: false
+    t.string   "email",                  default: "",                   null: false
+    t.string   "encrypted_password",     default: "",                   null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,                                                                                         null: false
+    t.integer  "sign_in_count",          default: 0,                    null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                                                                                                                 null: false
-    t.datetime "updated_at",                                                                                                                 null: false
-    t.string   "username",                                                                                                                   null: false
-    t.string   "avatar",                 default: "https://s-media-cache-ak0.pinimg.com/236x/8a/20/6d/8a206d9e7b2db7cf4bdb3ca9f1501fbf.jpg", null: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
+    t.string   "username",                                              null: false
+    t.string   "avatar",                 default: "/avatardefault.png", null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
