@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+$white: #fff;
+
+body {
+  background: url("/dogsunset.jpg") no-repeat center center fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.main-page-image-box {
+  margin-bottom: 0;
+  max-width: 500px;
+  padding-bottom: 0;
+  padding-top: 30px;
+}
+
+.main-page-image {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.sign-in-links a {
+  color: $white;
+  font-weight: bold;
+}
+
+.form-title {
+  color: $white;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.subheading {
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+}

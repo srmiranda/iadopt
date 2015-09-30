@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'view dog request form', %Q{
+feature 'view dog request form', %{
   As a user
   I want to visit the main page
   So that I can fill in what kind of dog I want
@@ -17,14 +17,17 @@ feature 'view dog request form', %Q{
 
   scenario 'visitor visits dog request page' do
     dog = FactoryGirl.create(:dog)
+    user = FactoryGirl.create(:user)
 
     visit root_path
-    click_link "Find me a dog!"
-    expect(page).to have_content("Dogs Matching:")
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+
+    expect(page).to have_content('Welcome to iAdopt!')
   end
 
   scenario 'user fails to fill out form correctly' do
-    visit root_path
-    click_link "Find me a dog!"
+
   end
 end
