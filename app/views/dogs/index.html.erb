@@ -1,3 +1,22 @@
-<h1>Dogs:</h1>
-
-<%= link_to "Find me a dog!", new_dog_path  %>
+<h3>Results</h3>
+<table>
+  <th>Name</th>
+  <th>Breed</th>
+  <th>Size</th>
+  <th>Kids</th>
+  <th>Age</th>
+  <th>Gender</th>
+  <th>Fixed</th>
+  <th>Shelter</th>
+<% @dogs.each do |dog| %>
+<tr>
+  <td><%= dog.name %></td>
+  <td><%= dog.breed %></td>
+  <td><%= dog.size %></td>
+  <td><%= dog.kids %></td>
+  <td><%= dog.age.to_f %></td>
+  <td><%= dog.gender %></td>
+  <td><%= dog.fixed %></td>
+  <td><%= dog.shelter.name %></td>
+</tr>
+<% end %>
