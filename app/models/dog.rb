@@ -8,7 +8,6 @@ class Dog < ActiveRecord::Base
   scope :gender, -> (gender) { where(gender: gender) if gender.present? }
   scope :fixed, -> (fixed) { where(fixed: fixed) if fixed.present? }
 
-
   scope :search, -> (params) {
     breed(params[:breed]).
     dog_size(params[:size]).

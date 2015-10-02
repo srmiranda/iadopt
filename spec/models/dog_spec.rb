@@ -3,8 +3,8 @@ require 'spec_helper'
 RSpec.describe Dog do
 
   context 'questions' do
-  let!(:shelter) { FactoryGirl.create(:shelter) }
-  let!(:dog) { FactoryGirl.create(:dog, shelter: shelter) }
+    let!(:shelter) { FactoryGirl.create(:shelter) }
+    let!(:dog) { FactoryGirl.create(:dog, shelter: shelter) }
 
     it "should have a name" do
       expect(dog.name).to eq("Duke")

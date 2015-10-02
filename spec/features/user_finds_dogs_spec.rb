@@ -22,8 +22,6 @@ feature 'view dog request form', %{
 
   scenario 'visitor visits dog survey form' do
     user = FactoryGirl.create(:user)
-    shelter = FactoryGirl.create(:shelter)
-    dog = FactoryGirl.create(:dog, shelter: shelter)
 
     visit root_path
     fill_in 'Email', with: user.email
@@ -34,8 +32,8 @@ feature 'view dog request form', %{
     click_link 'Find A Dog'
 
     expect(page).to have_content('Find the Perfect Pet')
-    select "German Shepherd Dog", :from => "dog[breed]"
-    select "Large", :from => "dog[size]"
+    select "German Shepherd Dog", from: "dog[breed]"
+    select "Large", from: "dog[size]"
     choose('kidtest')
     fill_in 'dog[age]', with: 5.0
     choose('sextest')
