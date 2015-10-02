@@ -1,6 +1,6 @@
 require 'faker'
 
-breeds = [
+breed_list = [
 "Airedale Terrier",
 "Akita (American)",
 "Alaskan Malamute",
@@ -604,7 +604,7 @@ phone: "(508)853-0030",
 url: "www.worcester-arl.org")
 
 1000.times do
-  Dog.create(name: Faker::Name.first_name, breed: breeds.sample, size: sizes.sample,
+  Dog.create(name: Faker::Name.first_name, breed: breed_list.sample, size: sizes.sample,
   kids: kids.sample, age: rand(0.5..10.0).round(1), gender: gender.sample,
   fixed: fixed.sample, shelter_id: rand(1..50))
 end
