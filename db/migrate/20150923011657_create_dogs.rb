@@ -4,10 +4,10 @@ class CreateDogs < ActiveRecord::Migration
       t.string :name, null: false
       t.string :breed, null: false
       t.string :size, null: false
-      t.boolean :kids, null: false
+      t.string :kids, null: false
       t.decimal :age, null: false
       t.string :gender, null: false
-      t.boolean :fixed, null: false
+      t.string :fixed, null: false
       t.belongs_to :shelter
 
       t.timestamps

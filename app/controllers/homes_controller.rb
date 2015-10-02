@@ -1,4 +1,6 @@
 class HomesController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
   def index
     if current_user
       redirect_to '/welcome'
