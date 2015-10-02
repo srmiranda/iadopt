@@ -2,6 +2,4 @@
 
 [![Code Climate](https://codeclimate.com/repos/5601ffd2e30ba00ad3000004/badges/19db52b003a75ddd477b/gpa.svg)](https://codeclimate.com/repos/5601ffd2e30ba00ad3000004/feed)
 
-[![Test Coverage](https://codeclimate.com/repos/5601ffd2e30ba00ad3000004/badges/19db52b003a75ddd477b/coverage.svg)](https://codeclimate.com/repos/5601ffd2e30ba00ad3000004/coverage)
-
 ![Coverage Status](https://coveralls.io/repos/srmiranda/iadopt/badge.png)
