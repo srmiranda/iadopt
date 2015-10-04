@@ -8,6 +8,7 @@ class CreateShelters < ActiveRecord::Migration
       t.string :zip, null: false
       t.string :phone, null: false
       t.string :url
+      t.belongs_to :user
     end
     add_index :shelters, :name, unique: true
   end
