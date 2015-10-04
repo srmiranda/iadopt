@@ -10,6 +10,6 @@ class ChangeKidsFixedToBoolean < ActiveRecord::Migration
     remove_column :dogs, :kids
     remove_column :dogs, :fixed
     add_column :dogs, :kids, :string
-    add_column :dogs, :fixed, :sring
+    add_column :dogs, :fixed, :string
   end
 end
