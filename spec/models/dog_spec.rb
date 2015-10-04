@@ -6,6 +6,15 @@ RSpec.describe Dog do
     let!(:shelter) { FactoryGirl.create(:shelter) }
     let!(:dog) { FactoryGirl.create(:dog, shelter: shelter) }
 
+    it { should belong_to(:shelter) }
+
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:breed) }
+    it { should validate_presence_of(:size) }
+    it { should validate_presence_of(:age) }
+    it { should validate_presence_of(:gender) }
+    it { should validate_presence_of(:shelter_id) }
+
     it "should have a name" do
       expect(dog.name).to eq("Duke")
       expect(dog.name).to_not eq("Shawn")
@@ -22,8 +31,8 @@ RSpec.describe Dog do
     end
 
     it "should be true or false for kids" do
-      expect(dog.kids).to eq('true')
-      expect(dog.kids).to_not eq('false')
+      expect(dog.kids).to be(true)
+      expect(dog.kids).to_not be(false)
     end
 
     it "should have an age" do
@@ -37,8 +46,8 @@ RSpec.describe Dog do
     end
 
     it "should be true or false for fixed" do
-      expect(dog.fixed).to eq('true')
-      expect(dog.fixed).to_not eq('false')
+      expect(dog.fixed).to be(true)
+      expect(dog.fixed).to_not be(false)
     end
 
     it "should contain a shelter id" do
