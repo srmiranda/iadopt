@@ -12,10 +12,10 @@ FactoryGirl.define do
     name "Duke"
     breed "German Shepherd Dog"
     size "large"
-    kids "true"
+    kids true
     age 5.0
     gender "male"
-    fixed "true"
+    fixed true
     shelter
   end
 
