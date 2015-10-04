@@ -11,6 +11,7 @@ class DogsController < ApplicationController
     @dog = Dog.new(dog_params)
     if dog.save
       flash[:notice] = "Dog added successfully!"
+      redirect_to dog_path(@dog)
     else
       flash[:errors] = @dog.errors.full_messages.join(", ")
       render :new
@@ -21,7 +22,7 @@ class DogsController < ApplicationController
 
   def dog_params
     params.require(:dog).permit(:name, :breed, :size, :kids, :age,
-    :gender, :fixed, :shelter_id )
+                                :gender, :fixed, :url, :shelter_id)
   end
 
   def search_params
