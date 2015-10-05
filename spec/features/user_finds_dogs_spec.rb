@@ -17,16 +17,14 @@ feature 'view dog request form', %{
   [x] I can provide a prefered gender
   [x] I can specify if the dog must be fixed
   [x] I must be presented with errors if I fill out the form incorrectly
-  [] I must see a list of matching dogs after submission
+  [x] I must see a list of matching dogs after submission
 } do
 
   scenario 'visitor visits dog survey form' do
     user = FactoryGirl.create(:user)
 
     visit root_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    login(user)
 
     expect(page).to have_content('Welcome to iAdopt!')
     click_link 'Find A Dog'

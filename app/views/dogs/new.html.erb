@@ -1,1 +1,43 @@
-<h1>"Dogs Matching:"</h1>
+<div class="preferences large-6 small-10 columns">
+  <fieldset>
+  <legend>Add A Dog</legend>
+    <%= form_for [@shelter, @dog] do |f| %>
+
+      <%= f.label :name, 'Name' %>
+      <%= f.text_area :name %>
+
+      <%= f.label :breed, 'Breed' %>
+      <%= f.select :breed, options_for_select(Dog::BREEDS) %>
+
+      <%= f.label :size %>
+      <%= f.select(:size, options_for_select(['', 'small', 'medium', 'large'])) %>
+
+      <%= f.label :kids, "Good with Kids:" %>
+      <%= f.radio_button(:kids, true) %>
+      <%= f.label(:kids_true, "True") %>
+      <%= f.radio_button(:kids, false) %>
+      <%= f.label(:kids_false, "False") %>
+
+      <%= f.label :age %>
+      <%= f.number_field :age %>
+
+      <%= f.label :gender %>
+      <%= f.radio_button(:gender, 'male') %>
+      <%= f.label(:gender_male, "Male") %>
+      <%= f.radio_button(:gender, 'female') %>
+      <%= f.label(:gender_female, "Female") %>
+
+      <%= f.label :fixed %>
+      <%= f.radio_button(:fixed, true) %>
+      <%= f.label(:fixed_true, "True") %>
+      <%= f.radio_button(:fixed, false) %>
+      <%= f.label(:fixed_false, "False") %>
+
+      <%= f.label :url, "Photo" %>
+      <%= f.text_area :url %>
+
+      <hr />
+      <%= f.submit "Submit", class: "button tiny expand round" %>
+      <% end %>
+  </fieldset>
+</div>

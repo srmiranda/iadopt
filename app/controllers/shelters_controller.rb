@@ -22,6 +22,7 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
+    @dogs = @shelter.dogs
   end
 
   protected
