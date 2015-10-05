@@ -126,7 +126,7 @@ Shelter.create(
   name: "Second Chance Fund for Animal Welfare",
   address: "P.O. Box 118",
   city: "Bolton",
-  state: "MA" ,
+  state: "MA",
   zip: '01740',
   phone: "(978) 779-8287",
   website: "www.secondchancefund.org",
@@ -136,7 +136,7 @@ Shelter.create(
   name: "New Beginnings Dog Rescue & cats too",
   address: "PO Box 33",
   city: "Bondsville",
-  state: "MA" ,
+  state: "MA",
   zip: '01009',
   phone: "(508)999-1234",
   website: "http://newbeginningsdogrescue.org",
@@ -151,7 +151,6 @@ Shelter.create(
   phone: "(617)426-9170",
   website: "www.arlboston.org",
   user_id: 1)
-
 
 Shelter.create(
   name: "Boston MSPCA/AHES",
@@ -342,7 +341,6 @@ Shelter.create(
   phone: "(978)582-6116",
   website: "www.catsontheweb.org",
   user_id: 1)
-
 
 Shelter.create(
   name: "Mansfield Animal Shelter",
