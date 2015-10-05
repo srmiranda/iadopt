@@ -13,14 +13,14 @@
 
 <% unless @dogs.nil? %>
   <table>
+    <th>Name</th>
+    <th>Breed</th>
+    <th>Size</th>
+    <th>Kids</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Fixed</th>
     <% @dogs.each do |dog| %>
-      <th>Name</th>
-      <th>Breed</th>
-      <th>Size</th>
-      <th>Kids</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Fixed</th>
     <tr>
       <td><%= link_to dog.name, dog_path(dog) %></td>
       <td><%= dog.breed %></td>
