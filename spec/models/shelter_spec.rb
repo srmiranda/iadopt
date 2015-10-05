@@ -33,5 +33,9 @@ RSpec.describe Shelter, type: :model do
 
   it { should have_valid(:url).when("www.google.com") }
 
+  it { should have_valid(:email).when("test@gmail.com") }
+
+  it { should have_valid(:website).when("http://www.amazon.com") }
+
   it { should have_valid(:user).when(user) }
 end

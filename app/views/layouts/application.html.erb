@@ -27,9 +27,15 @@
   </nav>
 
   <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
+    <% if key == 'notice' %>
+      <div class="alert-box success radius flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% else %>
+      <div class="alert-box alert radius flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
   <%- end -%>
 
   <%= yield %>

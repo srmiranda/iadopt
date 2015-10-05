@@ -1,0 +1,19 @@
+<table>
+  <th>Name</th>
+  <th>Breed</th>
+  <th>Size</th>
+  <th>Kids</th>
+  <th>Age</th>
+  <th>Gender</th>
+  <th>Fixed</th>
+  <th>Shelter</th>
+<tr>
+  <td><%= @dog.name %></td>
+  <td><%= @dog.breed %></td>
+  <td><%= @dog.size %></td>
+  <td><%= @dog.kids %></td>
+  <td><%= @dog.age.to_f %></td>
+  <td><%= @dog.gender %></td>
+  <td><%= @dog.fixed %></td>
+  <td><%= link_to @dog.shelter.name, shelter_path(@dog.shelter) %></td>
+</tr>

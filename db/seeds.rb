@@ -77,7 +77,10 @@ fixed = [
   "false"
 ]
 
-shelter_id = rand(1..60)
+User.create(
+email: "testuser@gmail.com",
+username: "testuser",
+password: "testtest")
 
 Shelter.create(
 name: "Abington Animal Control",
@@ -86,7 +89,8 @@ city: "Abington",
 state: "MA",
 zip: '02351',
 phone: "(781)878-3697",
-url: "www.petfinder.org/shelters/MA95.html")
+website: "www.petfinder.org/shelters/MA95.html",
+user_id: 1)
 
 Shelter.create(
 name: "All Paws Rescue",
@@ -95,7 +99,8 @@ city: "Accord",
 state: "MA",
 zip: '02018',
 phone: "(781) 749-0968",
-url: "www.allpawsrescue.org")
+website: "www.allpawsrescue.org",
+user_id: 1)
 
 Shelter.create(
 name: "Metro West Humane Society",
@@ -104,7 +109,8 @@ city: "Ashland",
 state: "MA",
 zip: '01721',
 phone: "(508) 875-3776",
-url: "www.webpaws.com/mwhs")
+website: "www.webpaws.com/mwhs",
+user_id: 1)
 
 Shelter.create(
 name: "Bosler Humane",
@@ -113,7 +119,8 @@ city: "Baldwinville",
 state: "MA",
 zip: '01436',
 phone: "(978)939-7316",
-url: "www.petfinder.com/shelters/MA118.html")
+website: "www.petfinder.com/shelters/MA118.html",
+user_id: 1)
 
 Shelter.create(
 name: "Second Chance Fund for Animal Welfare",
@@ -122,7 +129,8 @@ city: "Bolton",
 state: "MA" ,
 zip: '01740',
 phone: "(978) 779-8287",
-url: "www.secondchancefund.org")
+website: "www.secondchancefund.org",
+user_id: 1)
 
 Shelter.create(
 name: "New Beginnings Dog Rescue & cats too",
@@ -131,7 +139,8 @@ city: "Bondsville",
 state: "MA" ,
 zip: '01009',
 phone: "(508)999-1234",
-url: "http://newbeginningsdogrescue.org")
+website: "http://newbeginningsdogrescue.org",
+user_id: 1)
 
 Shelter.create(
 name: "Animal Rescue League of Boston - Headquarters",
@@ -140,7 +149,8 @@ city: "Boston",
 state: "MA",
 zip: '02117',
 phone: "(617)426-9170",
-url: "www.arlboston.org")
+website: "www.arlboston.org",
+user_id: 1)
 
 
 Shelter.create(
@@ -150,7 +160,8 @@ city: "Boston",
 state: "MA",
 zip: '02130',
 phone: "(617)522-5055",
-url: "www.mspca.org")
+website: "www.mspca.org",
+user_id: 1)
 
 Shelter.create(
 name: "Friends of the Plymouth Pound Inc.",
@@ -159,7 +170,8 @@ city: "Braintree",
 state: "MA",
 zip: '02184',
 phone: "(508)224-6651",
-url: "www.gis.net/~fpp/")
+website: "www.gis.net/~fpp/",
+user_id: 1)
 
 Shelter.create(
 name: "Ellen M. Gifford Shelter",
@@ -168,7 +180,8 @@ city: "Brighton",
 state: "MA",
 zip: '02135',
 phone: "(617)787-8872",
-url: "")
+website: "",
+user_id: 1)
 
 Shelter.create(
 name: "Southeastern Massachusetts MSPCA/AHES Animal Shelter",
@@ -177,7 +190,8 @@ city: "Brockton",
 state: "MA",
 zip: '02401',
 phone: "(508)586-2053",
-url: "www.mspca.org")
+website: "www.mspca.org",
+user_id: 1)
 
 Shelter.create(
 name: "Carver Animal Shelter",
@@ -186,7 +200,8 @@ city: "Carver",
 state: "MA",
 zip: '02330',
 phone: "(508)866-3444",
-url: "home.adelphia.net/~carvershel/")
+website: "home.adelphia.net/~carvershel/",
+user_id: 1)
 
 Shelter.create(
 name: "Cape Cod MSPCA/AHES",
@@ -195,7 +210,8 @@ city: "Centerville",
 state: "MA",
 zip: '02632',
 phone: "(508)775-0940",
-url: "www.mspca.org")
+website: "www.mspca.org",
+user_id: 1)
 
 Shelter.create(
 name: "Pine Ridge Animal Center",
@@ -204,7 +220,8 @@ city: "Dedham",
 state: "MA",
 zip: '02026',
 phone: "(781) 326-0729",
-url: "")
+website: "",
+user_id: 1)
 
 Shelter.create(
 name: "Dog Orphans",
@@ -213,7 +230,8 @@ city: "Douglas",
 state: "MA",
 zip: '01516',
 phone: "(508) 476-1855",
-url: "www.dogorphans.com")
+website: "www.dogorphans.com",
+user_id: 1)
 
 Shelter.create(
 name: "Willy's Kitty Angels Rescue",
@@ -222,7 +240,8 @@ city: "Dudley",
 state: "MA",
 zip: '01571',
 phone: "(508) 873-0336",
-url: "www.willyskittyangels.org")
+website: "www.willyskittyangels.org",
+user_id: 1)
 
 Shelter.create(
 name: "Animal Umbrella",
@@ -231,7 +250,8 @@ city: "East Arlington",
 state: "MA",
 zip: '02476',
 phone: "(781)734-4068",
-url: "")
+website: "",
+user_id: 1)
 
 Shelter.create(
 name: "Second Chance Animal Shelter",
@@ -240,7 +260,8 @@ city: "East Brookfield",
 state: "MA",
 zip: '01515',
 phone: "(508) 867-5525",
-url: "www.secondchanceanimals.org")
+website: "www.secondchanceanimals.org",
+user_id: 1)
 
 Shelter.create(
 name: "Animal Rescue League of Boston - Cape Cod Branch",
@@ -249,7 +270,8 @@ city: "East Brewster",
 state: "MA",
 zip: '02631',
 phone: "(508)255-1030",
-url: "www.arlboston.org")
+website: "www.arlboston.org",
+user_id: 1)
 
 Shelter.create(
 name: "Martha's Vineyard MSPCA/AHES",
@@ -258,7 +280,8 @@ city: "Edgartown",
 state: "MA",
 zip: '02539',
 phone: "(508)627-8662",
-url: "www.mspca.org")
+website: "www.mspca.org",
+user_id: 1)
 
 Shelter.create(
 name: "All Pets Rescue",
@@ -267,7 +290,8 @@ city: "Foxboro",
 state: "MA",
 zip: '02035',
 phone: "(508) 543-7958",
-url: "www.allpetsrescue.org")
+website: "www.allpetsrescue.org",
+user_id: 1)
 
 Shelter.create(
 name: "Save-A-Dog",
@@ -276,7 +300,8 @@ city: "Framingham",
 state: "MA",
 zip: '01701',
 phone: "(508)877-1407",
-url: "www.saveadog.org")
+website: "www.saveadog.org",
+user_id: 1)
 
 Shelter.create(
 name: "Rover Starts Over",
@@ -285,7 +310,8 @@ city: "Granby",
 state: "MA",
 zip: '01033',
 phone: "(413) 530-0311",
-url: "http://www.petfinder.com/shelters/MA21.html")
+website: "http://www.petfinder.com/shelters/MA21.html",
+user_id: 1)
 
 Shelter.create(
 name: "Bay Path Humane Society",
@@ -294,7 +320,8 @@ city: "Hopkington",
 state: "MA",
 zip: '01748',
 phone: "(508)435-6938",
-url: "www.baypathhumane.org")
+website: "www.baypathhumane.org",
+user_id: 1)
 
 Shelter.create(
 name: "Dakin Pioneer Valley Humane Society",
@@ -303,7 +330,8 @@ city: "Leverett",
 state: "MA",
 zip: '01054',
 phone: "(413)548-9898",
-url: "www.dpvhs.org")
+website: "www.dpvhs.org",
+user_id: 1)
 
 Shelter.create(
 name: "Pat Brody Shelter for Cats",
@@ -312,7 +340,8 @@ city: "Lunenburg",
 state: "MA",
 zip: '01462',
 phone: "(978)582-6116",
-url: "www.catsontheweb.org")
+website: "www.catsontheweb.org",
+user_id: 1)
 
 
 Shelter.create(
@@ -322,7 +351,8 @@ city: "Mansfield",
 state: "MA",
 zip: '02048',
 phone: "(508)261-7339",
-url: "www.mansfieldshelter.org")
+website: "www.mansfieldshelter.org",
+user_id: 1)
 
 Shelter.create(
 name: "Neponset Valley Humane Society",
@@ -331,7 +361,8 @@ city: "Mansfield",
 state: "MA",
 zip: '02048',
 phone: "(508)261-9924",
-url: "www.nvhumanesociety.org")
+website: "www.nvhumanesociety.org",
+user_id: 1)
 
 Shelter.create(
 name: "Melrose Humane Society",
@@ -340,7 +371,8 @@ city: "Melrose",
 state: "MA",
 zip: '02176',
 phone: "(781)662-3224",
-url: "www.melrosehumanesociety.org")
+website: "www.melrosehumanesociety.org",
+user_id: 1)
 
 Shelter.create(
 name: "Methuen MSPCA/AHES Animal Shelter",
@@ -349,7 +381,8 @@ city: "Methuen",
 state: "MA",
 zip: '01844',
 phone: "(978)687-7453",
-url: "www.mspca.org")
+website: "www.mspca.org",
+user_id: 1)
 
 Shelter.create(
 name: "North Shore Feline Rescue",
@@ -358,7 +391,8 @@ city: "Middleton",
 state: "MA",
 zip: '01949',
 phone: "(978)774-4413",
-url: "www.nsfr.org")
+website: "www.nsfr.org",
+user_id: 1)
 
 Shelter.create(
 name: "Milford Humane Society",
@@ -367,7 +401,8 @@ city: "Medway",
 state: "MA",
 zip: '02053',
 phone: "(508)473-7008",
-url: "www.milfordhumane.org")
+website: "www.milfordhumane.org",
+user_id: 1)
 
 Shelter.create(
 name: "Milton Animal League",
@@ -376,7 +411,8 @@ city: "Milton",
 state: "MA",
 zip: '02186',
 phone: "(617)698-0413",
-url: "www.miltonanimalleague.org")
+website: "www.miltonanimalleague.org",
+user_id: 1)
 
 Shelter.create(
 name: "Nantucket MSPCA/AHES",
@@ -385,7 +421,8 @@ city: "Nantucket",
 state: "MA",
 zip: '02554',
 phone: "(508)228-1491",
-url: "www.mspca.org")
+website: "www.mspca.org",
+user_id: 1)
 
 Shelter.create(
 name: "North Attleboro Animal Shelter",
@@ -394,7 +431,8 @@ city: "North Attleboro",
 state: "MA",
 zip: '02760',
 phone: "(508)699-0128",
-url: "www.nashelter.org")
+website: "www.nashelter.org",
+user_id: 1)
 
 Shelter.create(
 name: "Last Chance Cat Sanctuary",
@@ -403,7 +441,8 @@ city: "North Dartmouth",
 state: "MA",
 zip: '02747',
 phone: "(508)994-2385",
-url: "members.aol.com/lccatsanct")
+website: "members.aol.com/lccatsanct",
+user_id: 1)
 
 Shelter.create(
 name: "Canine Connections, Inc.",
@@ -412,7 +451,8 @@ city: "Norwood",
 state: "MA",
 zip: '02062',
 phone: "(781)793-7879",
-url: "www.k9connections.org")
+website: "www.k9connections.org",
+user_id: 1)
 
 Shelter.create(
 name: "Friends of the Plymouth Pound",
@@ -421,7 +461,8 @@ city: "Manomet",
 state: "MA",
 zip: '02345',
 phone: "(508) 224-6651",
-url: "www.friendsplymouthpound.org")
+website: "www.friendsplymouthpound.org",
+user_id: 1)
 
 Shelter.create(
 name: "Plymouth Humane Society",
@@ -430,7 +471,8 @@ city: "Plymouth",
 state: "MA",
 zip: '02345',
 phone: "(508)224-8609",
-url: "")
+website: "",
+user_id: 1)
 
 Shelter.create(
 name: "Quincy Animal Shelter",
@@ -439,7 +481,8 @@ city: "Quincy",
 state: "MA",
 zip: '02169',
 phone: "(617) 376-1349",
-url: "QuincyAnimalShelter.org")
+website: "QuincyAnimalShelter.org",
+user_id: 1)
 
 Shelter.create(
 name: "Sweetpea Friends of Rutland Animals, Inc.",
@@ -448,7 +491,8 @@ city: "Rutland",
 state: "MA",
 zip: '01543',
 phone: "(508) 886-0098",
-url: "www.sweetpeafora.org")
+website: "www.sweetpeafora.org",
+user_id: 1)
 
 Shelter.create(
 name: "Animal Rescue League of Boston - Sheldon Branch",
@@ -457,7 +501,8 @@ city: "Salem",
 state: "MA",
 zip: '01970',
 phone: "(978)744-7910",
-url: "")
+website: "",
+user_id: 1)
 
 Shelter.create(
 name: "Northeast Animal Shelter",
@@ -466,7 +511,8 @@ city: "Salem",
 state: "MA",
 zip: '01970',
 phone: "(978)745-9888",
-url: "www.northeastanimalshelter.org")
+website: "www.northeastanimalshelter.org",
+user_id: 1)
 
 Shelter.create(
 name: "Scituate Animal Shelter",
@@ -475,7 +521,8 @@ city: "Scituate",
 state: "MA",
 zip: '02066',
 phone: "(781)545-8703",
-url: "www.town.scituate.ma.us/animalshelter/")
+website: "www.town.scituate.ma.us/animalshelter/",
+user_id: 1)
 
 Shelter.create(
 name: "Standish Humane Society",
@@ -484,7 +531,8 @@ city: "Scituate",
 state: "MA",
 zip: '02066',
 phone: "(781)834-4663",
-url: "www.standishhumanesociety.com")
+website: "www.standishhumanesociety.com",
+user_id: 1)
 
 Shelter.create(
 name: "Alliance for Animals",
@@ -493,7 +541,8 @@ city: "South Boston",
 state: "MA",
 zip: '02127',
 phone: "(617) 268-7800",
-url: "www.afa.arlington.ma.us")
+website: "www.afa.arlington.ma.us",
+user_id: 1)
 
 Shelter.create(
 name: "People for Animals League",
@@ -502,7 +551,8 @@ city: "Spencer",
 state: "MA",
 zip: '01562',
 phone: "(774) 745-8041",
-url: "www.people4animals.org")
+website: "www.people4animals.org",
+user_id: 1)
 
 Shelter.create(
 name: "Thomas J. O'Connor Animal Control and Adoption Center",
@@ -511,7 +561,8 @@ city: "Springfield",
 state: "MA",
 zip: '01013',
 phone: "(413)781-1484",
-url: "www.tjoconnoradoptioncenter.com")
+website: "www.tjoconnoradoptioncenter.com",
+user_id: 1)
 
 Shelter.create(
 name: "The Animal Shelter, Inc.",
@@ -520,7 +571,8 @@ city: "Sterling",
 state: "MA",
 zip: '01564',
 phone: "(978) 422-8585",
-url: "www.sterlingshelter.org")
+website: "www.sterlingshelter.org",
+user_id: 1)
 
 Shelter.create(
 name: "All Dog Rescue",
@@ -529,7 +581,8 @@ city: "Stow",
 state: "MA",
 zip: '01775',
 phone: "(617) 507-9193",
-url: "www.alldogrescue.org")
+website: "www.alldogrescue.org",
+user_id: 1)
 
 Shelter.create(
 name: "PoundHounds, Inc.",
@@ -538,7 +591,8 @@ city: "Hopkinton",
 state: "MA",
 zip: '01748',
 phone: "(508)435-5029",
-url: "www.poundhounds.org")
+website: "www.poundhounds.org",
+user_id: 1)
 
 Shelter.create(
 name: "Buddy Dog Humane Society",
@@ -547,7 +601,8 @@ city: "Sudbury",
 state: "MA",
 zip: '01776',
 phone: "(978)443-6990",
-url: "www.buddydoghs.com")
+website: "www.buddydoghs.com",
+user_id: 1)
 
 Shelter.create(
 name: "Taunton Animal Shelter",
@@ -556,7 +611,8 @@ city: "Taunton",
 state: "MA",
 zip: '02780',
 phone: "(508)822-2150",
-url: "www.petfinder.org/shelters/MA72.html")
+website: "www.petfinder.org/shelters/MA72.html",
+user_id: 1)
 
 Shelter.create(
 name: "Central Rescue & Rehabilitation",
@@ -565,7 +621,8 @@ city: "Wales",
 state: "MA",
 zip: '01081',
 phone: "(508)555-1234",
-url: "www.centralrescue.org")
+website: "www.centralrescue.org",
+user_id: 1)
 
 Shelter.create(
 name: "Stray Pets in Need (SPIN)",
@@ -574,7 +631,8 @@ city: "Wellesley",
 state: "MA",
 zip: '02482',
 phone: "(781) 235-1218",
-url: "www.straypetsinneed.info")
+website: "www.straypetsinneed.info",
+user_id: 1)
 
 Shelter.create(
 name: "FACES, Inc. Dog Adoption",
@@ -583,7 +641,8 @@ city: "West Springfield",
 state: "MA",
 zip: '01090',
 phone: "(413)783-3078",
-url: "faces.petfinder.org")
+website: "faces.petfinder.org",
+user_id: 1)
 
 Shelter.create(
 name: "Ahimsa Haven",
@@ -592,7 +651,8 @@ city: "Winchendon",
 state: "MA",
 zip: '01475',
 phone: "(978) 297-3862",
-url: "www.ahimsahaven.org")
+website: "www.ahimsahaven.org",
+user_id: 1)
 
 Shelter.create(
 name: "Worcester Animal Rescue League",
@@ -601,7 +661,8 @@ city: "Worcester",
 state: "MA",
 zip: '01601',
 phone: "(508)853-0030",
-url: "www.worcester-arl.org")
+website: "www.worcester-arl.org",
+user_id: 1)
 
 1000.times do
   Dog.create(name: Faker::Name.first_name, breed: breed_list.sample, size: sizes.sample,
