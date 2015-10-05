@@ -18,12 +18,53 @@
 $white: #fff;
 
 body {
-  background: url("/dogsunset.jpg") no-repeat center center fixed;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
+  // background: url("/dogsunset.jpg") no-repeat center center fixed;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // -webkit-background-size: cover;
+  // background-size: cover;
 }
+
+.button-group {
+  position: relative;
+  display: inline-block;
+  margin: 1rem 0;
+  &:before {
+    content: attr(data-grouptype);
+    z-index: 99999;
+    color: #999;
+    display: block;
+    font-size: 1rem;
+    padding: 0.25em;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 37.5%;
+    top: 0.35rem;
+  }
+  button + button {
+    margin-left: 5px;
+  }
+}
+
+.home-container {
+  margin-top: 25px;
+}
+
+.top-bar {
+  height: 60px;
+}
+
+.logo {
+  padding: 3px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.mobile-welcome {
+  margin-top: 25px;
+}
+
 
 .main-page-image-box {
   margin-bottom: 0;
@@ -56,5 +97,14 @@ body {
 
 .preferences {
   background-color: rgba(255, 255, 255, 0.5);
-  margin: 25px;
+}
+
+.preferences-image {
+  margin-top: 30px;
+}
+
+.new-shelter-image {
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

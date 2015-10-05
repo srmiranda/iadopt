@@ -1,12 +1,48 @@
-<h1>Welcome to iAdopt!</h1>
-<%= link_to "Find A Dog", find_a_dog_path, class: "button tiny round" %>
-<%= link_to "Register A Shelter", new_shelter_path, class: "button tiny round" %>
+<div class="home-container row">
+  <div class="large-6 columns">
+    <img src="/dog4.jpg"><br>
+    <div class="panel">
+      <% if current_user.shelters.present? %>
+        Manage Your Shelter(s):
+        <% current_user.shelters.each do |shelter| %>
+        </br>
+          <%= link_to shelter.name, shelter_path(shelter.id) %>
+        <% end %>
+      <% else %>
+        <p>Content Shown When User Has No Shelters To Manage</p>
+      <% end %>
+    </div>
 
-</br>
-<% if current_user.shelters.present? %>
-  Manage Your Shelter(s):
-  <% current_user.shelters.each do |shelter| %>
-  </br>
-    <%= link_to shelter.name, shelter_path(shelter.id) %>
-  <% end %>
-<% end %>
+    <div class="twitter-box panel">
+      <p>Twitter Box</p>
+    </div>
+  </div>
+
+  <div class="large-6 columns">
+    <h3 class="mobile-welcome show-for-small">Welcome to iAdopt!<hr/></h3>
+      <div class="panel">
+        <h4 class="hide-for-small">Welcome to iAdopt!<hr/></h4>
+        <h5 class="subheader">Fusce ullamcorper mauris in eros dignissim molestie posuere felis blandit. Aliquam erat volutpat. Mauris ultricies posuere vehicula. Sed sit amet posuere erat. Quisque in ipsum non augue euismod dapibus non et eros. Pellentesque consectetur tempus mi iaculis bibendum. Ut vel dolor sed eros tincidunt volutpat ac eget leo.</h5>
+      </div>
+
+    <div class="row">
+      <div class="large-6 small-6 columns">
+        <div class="panel">
+          <h5>Looking to Adopt?</h5>
+            <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
+            <%= link_to "Find A Dog", find_a_dog_path,
+            class: "small button primary radius" %>
+        </div>
+      </div>
+
+      <div class="large-6 small-6 columns">
+        <div class="panel">
+          <h5>Have A Shelter?</h5>
+            <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
+            <%= link_to "Register A Shelter", new_shelter_path,
+            class: "small button success radius" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

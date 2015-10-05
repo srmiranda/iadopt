@@ -1,36 +1,49 @@
-<div class="preferences large-6 small-10 columns">
-  <fieldset>
-  <legend>Register A Shelter</legend>
-    <%= form_for([@user, @shelter]) do |f| %>
+<div class="row">
+  <div class="preferences large-6 small-12 large-uncentered small-centered columns">
+    <fieldset>
+    <legend>Register A Shelter</legend>
+      <%= form_for([@user, @shelter]) do |f| %>
 
-      <%= f.label :name, "Name of your organization:" %>
-      <%= f.text_area :name %>
+        <%= f.label :name, "Name of your organization:" %>
+        <%= f.text_area :name %>
 
-      <%= f.label :address %>
-      <%= f.text_area :address %>
+        <%= f.label :address %>
+        <%= f.text_area :address %>
 
-      <%= f.label :city %>
-      <%= f.text_area :city %>
+        <%= f.label :city %>
+        <%= f.text_area :city %>
 
-      <%= f.label :state %>
-      <%= f.text_area :state %>
+        <%= f.label :state %>
+        <%= f.text_area :state %>
 
-      <%= f.label :zip %>
-      <%= f.number_field :zip %>
+        <%= f.label :zip %>
+        <%= f.number_field :zip %>
 
-      <%= f.label :phone %>
-      <%= f.text_area :phone %>
+        <%= f.label :phone %>
+        <%= f.text_area :phone %>
 
-      <%= f.label :website, "Website URL (optional)"%>
-      <%= f.text_area :website %>
+        <%= f.label :website, "Website URL (optional)"%>
+        <%= f.text_area :website %>
 
-      <%= f.label :email, "Contact Email (optional)" %>
-      <%= f.text_area :email %>
+        <%= f.label :email, "Contact Email (optional)" %>
+        <%= f.text_area :email %>
 
-      <%= f.label :url, "Picture (optional)" %>
-      <%= f.text_area :url %>
+        <%= f.label :url, "Picture (optional)" %>
+        <%= f.text_area :url %>
 
-      <%= f.submit "Submit", class: "button tiny round" %>
-      <% end %>
-  </fieldset>
+        <%= f.submit "Submit", class: "button tiny expand round" %>
+        <% end %>
+    </fieldset>
+  </div>
+
+  <div class="panel new-shelter-image large-6 columns">
+    <img src="/dog1.jpg" class="large-12 small-12 columns"></br>
+  </div>
+  <div class="row">
+    <div class="panel large-6 columns">
+      <p>“Humanity's true moral test, its fundamental test…consists of its
+        attitude towards those who are at its mercy: animals.”</br>
+        ― Milan Kundera</p>
+    </div>
+  </div>
 </div>
