@@ -17,7 +17,6 @@ feature 'shelter owner adds a dog', %{
 
   scenario 'shelter owner adds dog from shelter page' do
     user = FactoryGirl.create(:user)
-    shelter = FactoryGirl.create(:shelter)
 
     visit root_path
     login(user)
@@ -42,7 +41,6 @@ feature 'shelter owner adds a dog', %{
 
   scenario 'shelter owner submits a blank form' do
     user = FactoryGirl.create(:user)
-    shelter = FactoryGirl.create(:shelter)
 
     visit root_path
     login(user)

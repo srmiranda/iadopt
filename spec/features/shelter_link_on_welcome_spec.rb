@@ -16,7 +16,6 @@ feature 'user sees their shelter on main page', %{
 
   scenario 'visitor visits dog survey form' do
     user = FactoryGirl.create(:user)
-    shelter = FactoryGirl.create(:shelter)
 
     visit root_path
     login(user)
