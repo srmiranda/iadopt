@@ -26,7 +26,7 @@ feature 'user sees their shelter on main page', %{
     expect(page).to have_content('Register A Shelter')
     register_shelter
     expect(page).to have_content('Launch Shelter')
-    click_link "iAdopt"
+    visit root_path
     expect(page).to have_content('Manage Your Shelter(s):')
     expect(page).to have_content(user.shelters.first.name)
   end
