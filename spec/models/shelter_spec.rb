@@ -4,6 +4,7 @@ RSpec.describe Shelter, type: :model do
   let!(:user) { FactoryGirl.create(:user) }
 
   it { should belong_to(:user) }
+  it { should have_many(:employees) }
 
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:address) }

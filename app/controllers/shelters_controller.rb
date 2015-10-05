@@ -11,6 +11,7 @@ class SheltersController < ApplicationController
     @shelter = Shelter.new(shelter_params)
     @shelter.user = current_user
     if @shelter.save
+      Employee.create(shelter_id: @shelter.id, user_id: current_user.id)
       flash[:notice] = "Shelter created successfully."
       redirect_to shelter_path(@shelter)
     else
