@@ -14,4 +14,8 @@ class Shelter < ActiveRecord::Base
   validates :zip, numericality: { only_integer: true }
   validates :phone, presence: true
   validates :user_id, presence: true
+
+  def self.search(query)
+    where("name like ?", "%#{query}%")
+  end
 end

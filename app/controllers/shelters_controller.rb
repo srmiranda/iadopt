@@ -1,6 +1,10 @@
 class SheltersController < ApplicationController
   def index
-    @shelters = Shelter.all
+    if params[:search]
+      @shelters = Shelter.search(params[:search])
+    else
+      @shelters = Shelter.order(name: :asc)
+    end
   end
 
   def new
