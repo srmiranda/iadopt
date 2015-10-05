@@ -8,12 +8,18 @@ class DogsController < ApplicationController
   end
 
   def new
-    @dog = Dog.new
+    if signed_in?
+      @dog = Dog.new
+      @shelter = Shelter.find(params[:shelter_id])
+    else
+      authenticate_user!
+    end
   end
 
   def create
     @dog = Dog.new(dog_params)
-    if dog.save
+    @dog.shelter = Shelter.find(params[:shelter_id])
+    if @dog.save
       flash[:notice] = "Dog added successfully!"
       redirect_to dog_path(@dog)
     else
@@ -26,7 +32,7 @@ class DogsController < ApplicationController
 
   def dog_params
     params.require(:dog).permit(:name, :breed, :size, :kids, :age,
-    :gender, :fixed, :url, :shelter)
+    :gender, :fixed, :url, :shelter_id)
   end
 
   def search_params

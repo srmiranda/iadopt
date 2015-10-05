@@ -10,3 +10,30 @@
   <h5><%= @shelter.website %></h5>
   <h5><%= @shelter.email %></h5>
 </div>
+
+<% unless @dogs.nil? %>
+  <table>
+    <% @dogs.each do |dog| %>
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Size</th>
+      <th>Kids</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Fixed</th>
+    <tr>
+      <td><%= link_to dog.name, dog_path(dog) %></td>
+      <td><%= dog.breed %></td>
+      <td><%= dog.size %></td>
+      <td><%= dog.kids %></td>
+      <td><%= dog.age.to_f %></td>
+      <td><%= dog.gender %></td>
+      <td><%= dog.fixed %></td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<% if @shelter.user_id == current_user.id %>
+  <%= link_to 'Add A Dog', new_shelter_dog_path(@shelter) %>
+<% end %>

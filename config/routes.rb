@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :dogs, only: [:index, :show, :new, :create]
+  resources :dogs, only: [:index, :show]
 
-  resources :shelters, only: [:index, :show, :new, :create]
+  resources :shelters, only: [:index, :show, :new, :create] do
+    resources :dogs, only: [:new, :create]
+  end
 end
