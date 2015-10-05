@@ -1,0 +1,15 @@
+<h1>Massachusetts Shelters</h1>
+
+<% @shelters.each do |shelter| %>
+  <div class="shelter-box">
+    <img src="<%= shelter.url %>">
+    Name: <%= shelter.name %>
+    Address: <%= shelter.address %>
+    City: <%= shelter.city %>
+    State: <%= shelter.state %>
+    Zip: <%= shelter.zip %>
+    Phone: <%= shelter.phone %>
+    Website: <%= shelter.website %>
+    Contact Email: <%= shelter.email %>
+  </div>
+<% end %>

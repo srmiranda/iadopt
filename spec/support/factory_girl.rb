@@ -27,6 +27,8 @@ FactoryGirl.define do
     zip 90210
     phone "(508) 555-1234"
     url "www.google.com"
+    email "test@gmail.com"
+    website "http://www.amazon.com"
     user
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151004213514) do
+ActiveRecord::Schema.define(version: 20151004225332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20151004213514) do
     t.string  "phone",   null: false
     t.string  "url"
     t.integer "user_id"
+    t.string  "website"
+    t.string  "email"
   end
 
   add_index "shelters", ["name"], name: "index_shelters_on_name", unique: true, using: :btree

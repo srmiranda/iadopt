@@ -3,6 +3,10 @@ class DogsController < ApplicationController
     @dogs = Dog.search(search_params)
   end
 
+  def show
+    @dog = Dog.find(params[:id])
+  end
+
   def new
     @dog = Dog.new
   end
@@ -22,7 +26,7 @@ class DogsController < ApplicationController
 
   def dog_params
     params.require(:dog).permit(:name, :breed, :size, :kids, :age,
-                                :gender, :fixed, :url, :shelter_id)
+    :gender, :fixed, :url, :shelter)
   end
 
   def search_params
