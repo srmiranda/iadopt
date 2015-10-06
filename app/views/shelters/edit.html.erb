@@ -1,7 +1,8 @@
-<div class="preferences large-6 small-12 large-uncentered small-centered columns">
+<div class="preferences large-6 small-12 small-centered columns">
   <fieldset>
   <legend>Update Your Shelter</legend>
     <%= form_for @shelter do |f| %>
+    <%= link_to "Back", shelter_path(@shelter), class: "right button tiny round" %>
 
       <%= f.label :name, "Name of your organization:" %>
       <%= f.text_area :name %>

@@ -1,41 +1,56 @@
-<h1><%= @shelter.name %></h1>
-<img src="<%= @shelter.url %>" width="300px">
-</br>
-<div class="panel large-6 small-12 columns">
-  <h5><%= @shelter.address %></h5>
-  <h5><%= @shelter.city %></h5>
-  <h5><%= @shelter.state %></h5>
-  <h5><%= @shelter.zip %></h5>
-  <h5><%= @shelter.phone %></h5>
-  <h5><%= @shelter.website %></h5>
-  <h5><%= @shelter.email %></h5>
+<article class="shelter-card row wide">
+    <div class="large-6 columns">
+      <div class="row">
+        <div class="shelter-card-image small-8 small-centered large-uncentered columns">
+          <% if @shelter.url.blank? %>
+            <img src="/default.jpg">
+          <% else %>
+            <img src="<%= @shelter.url %>">
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="large-6 columns" id="shelter-info">
+      <h3><%= @shelter.name %></h3>
+      <h6><%= @shelter.address %></h6>
+      <h6><%= @shelter.city %>, <%= @shelter.state %> <%= @shelter.zip %></h6>
+      <h6><%= @shelter.phone %></h6>
+      <h6><%= @shelter.website %></h6>
+      <% if @shelter.user_id == current_user.id %>
+        <%= link_to 'Add A Dog', new_shelter_dog_path(@shelter), class: "shelter-button button tiny round" %>
+        <%= link_to 'Edit Shelter', edit_shelter_path(@shelter), class: "shelter-button button tiny round" %>
+        <%= link_to "Delete Shelter", @shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "shelter-button button tiny round" %>
+      <% end %>
+    </div>
+  </article>
+
+<div class="row">
+  <div class="left large-6 small-12 columns" id="dog-table">
+  <% unless @dogs.nil? %>
+    <table id="shelters">
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Size</th>
+      <th>Kids</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Fixed</th>
+      <% @dogs.each do |dog| %>
+      <tr>
+        <td><%= link_to dog.name, dog_path(dog) %></td>
+        <td><%= dog.breed %></td>
+        <td><%= dog.size %></td>
+        <td><%= dog.kids %></td>
+        <td><%= dog.age.to_f %></td>
+        <td><%= dog.gender %></td>
+        <td><%= dog.fixed %></td>
+      </tr>
+      <% end %>
+    </table>
+  <% end %>
 </div>
 
-<% unless @dogs.nil? %>
-  <table>
-    <th>Name</th>
-    <th>Breed</th>
-    <th>Size</th>
-    <th>Kids</th>
-    <th>Age</th>
-    <th>Gender</th>
-    <th>Fixed</th>
-    <% @dogs.each do |dog| %>
-    <tr>
-      <td><%= link_to dog.name, dog_path(dog) %></td>
-      <td><%= dog.breed %></td>
-      <td><%= dog.size %></td>
-      <td><%= dog.kids %></td>
-      <td><%= dog.age.to_f %></td>
-      <td><%= dog.gender %></td>
-      <td><%= dog.fixed %></td>
-    </tr>
-    <% end %>
-  </table>
-<% end %>
-
-<% if @shelter.user_id == current_user.id %>
-  <%= link_to 'Add A Dog', new_shelter_dog_path(@shelter) %>
-  <%= link_to 'Edit Shelter', edit_shelter_path(@shelter) %>
-  <%= link_to "Delete Shelter", @shelter, data: { confirm: "Are you sure?" }, method: :delete %>
-<% end %>
+  <div class="right large-5 small-12 large-uncentered medium-centered small-centered columns" id="google-map">
+    <img src="http://www.evoluted.net/thinktank/wp-content/uploads/2011/05/map.jpg">
+  </div>
+</div>
