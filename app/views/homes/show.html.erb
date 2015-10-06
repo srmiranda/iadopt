@@ -2,25 +2,23 @@
   <div class="home-container row">
     <div class="large-6 columns">
       <img src="/dog4.jpg"><br>
-      <div class="panel">
         <% if current_user.shelters.present? %>
-          <h5 class="title">Manage Your Shelter(s):</h5>
-          <table id="shelters">
-            <tr>
-              <th>Name</th>
-              <th>Phone</th>
-            </tr>
-          <% current_user.shelters.each do |shelter| %>
-            <tr>
-              <td><%= link_to shelter.name, shelter_path(shelter.id) %></td>
-              <td><%= shelter.phone %></td>
-            </tr>
-          <% end %>
-          </table>
-        <% else %>
-          <p>Content Shown When User Has No Shelters To Manage</p>
+          <div class="panel">
+              <h5 class="title">Manage Your Shelter(s):</h5>
+              <table id="shelters">
+                <tr>
+                  <th>Name</th>
+                  <th>Phone</th>
+                </tr>
+              <% current_user.shelters.each do |shelter| %>
+                <tr>
+                  <td><%= link_to shelter.name, shelter_path(shelter.id) %></td>
+                  <td><%= shelter.phone %></td>
+                </tr>
+              <% end %>
+              </table>
+          </div>
         <% end %>
-      </div>
 
       <div class="twitter-box panel">
         <img src="/twitter_test.png">
