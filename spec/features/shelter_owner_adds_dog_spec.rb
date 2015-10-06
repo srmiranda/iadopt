@@ -1,5 +1,3 @@
-
-
 require 'rails_helper'
 
 feature 'shelter owner adds a dog', %{
