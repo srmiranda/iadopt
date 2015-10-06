@@ -68,7 +68,6 @@ class SheltersController < ApplicationController
     end
   end
 
-
   protected
 
   def shelter_params
