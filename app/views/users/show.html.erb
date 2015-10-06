@@ -1,6 +1,5 @@
 <div class="large-10 small-12 small-centered columns preferences">
   <div class="account-settings">
-    <%= devise_error_messages! %>
     <%= form_for(@user, url: registration_path(@user), html: { method: :put }, class: "settings-form") do |f| %>
       <fieldset>
         <legend>Account Settings</legend>
