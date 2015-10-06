@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get '/find_a_dog' => 'dogs#search'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: :registrations }
+
+  resources :users, only: [:index, :show, :destroy]
 
   resources :dogs, only: [:index, :show, :edit, :update, :destroy]
 
