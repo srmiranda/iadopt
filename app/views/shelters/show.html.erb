@@ -37,4 +37,5 @@
 <% if @shelter.user_id == current_user.id %>
   <%= link_to 'Add A Dog', new_shelter_dog_path(@shelter) %>
   <%= link_to 'Edit Shelter', edit_shelter_path(@shelter) %>
+  <%= link_to "Delete Shelter", @shelter, data: { confirm: "Are you sure?" }, method: :delete %>
 <% end %>

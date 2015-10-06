@@ -54,6 +54,20 @@ class SheltersController < ApplicationController
     end
   end
 
+  def destroy
+    @shelter = Shelter.find(params[:id])
+    if signed_in? && (current_user == @shelter.user)
+      @shelter.destroy
+      flash[:notice] = 'Shelter removed successfully.'
+      redirect_to root_path
+    elsif !signed_in?
+      authenticate_user!
+    else
+      flash[:alert] = 'You have no permission to remove this dog.'
+      redirect_to shelter_path(@shelter)
+    end
+  end
+
   protected
 
   def shelter_params
