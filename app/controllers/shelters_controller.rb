@@ -29,6 +29,31 @@ class SheltersController < ApplicationController
     @dogs = @shelter.dogs
   end
 
+  def edit
+    shelter = Shelter.find(params[:id])
+    if signed_in? && current_user == shelter.user
+      @shelter = Shelter.find(params[:id])
+    elsif !signed_in?
+      authenticate_user!
+    else
+      flash[:alert] = 'You have no permission to edit this shelter.'
+      redirect_to shelter_path(shelter)
+    end
+  end
+
+  def update
+    @shelter = Shelter.find(params[:id])
+    if @shelter.update_attributes(shelter_params)
+      flash[:notice] = 'Shelter successfully updated.'
+      redirect_to shelter_path(@shelter)
+    elsif !signed_in?
+      authenticate_user!
+    else
+      flash[:alert] = @shelter.errors.full_messages.join(", ")
+      render :edit
+    end
+  end
+
   protected
 
   def shelter_params
