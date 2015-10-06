@@ -52,11 +52,11 @@
           </div>
         </div>
       </fieldset>
+        <div class="cancel-account">
+          <p>
+            <%= button_to "Cancel my account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "button alert tiny round" %>
+          </p>
+        </div>
+      </div>
     <% end %>
   </div>
-  <div class="cancel-account">
-    <p>
-      <%= button_to "Cancel my account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "button alert tiny round" %>
-    </p>
-  </div>
-</div>
