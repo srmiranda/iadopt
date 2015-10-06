@@ -28,6 +28,31 @@ class DogsController < ApplicationController
     end
   end
 
+  def edit
+    dog = Dog.find(params[:id])
+    if signed_in? && current_user == dog.shelter.user
+      @dog = Dog.find(params[:id])
+    elsif !signed_in?
+      authenticate_user!
+    else
+      flash[:alert] = 'You have no permission to edit this dog.'
+      redirect_to dog_path(dog)
+    end
+  end
+
+  def update
+    @dog = Dog.find(params[:id])
+    if @dog.update_attributes(dog_params)
+      flash[:notice] = 'Dog successfully updated.'
+      redirect_to dog_path(@dog)
+    elsif !signed_in?
+      authenticate_user!
+    else
+      flash[:alert] = @dog.errors.full_messages.join(", ")
+      render :edit
+    end
+  end
+
   protected
 
   def dog_params

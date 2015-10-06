@@ -17,4 +17,7 @@
   <td><%= @dog.gender %></td>
   <td><%= @dog.fixed %></td>
   <td><%= link_to @dog.shelter.name, shelter_path(@dog.shelter) %></td>
+  <% if current_user = @dog.shelter.user %>
+    <td><%= link_to "Edit", edit_dog_path(@dog) %></td>
+  <% end %>
 </tr>
