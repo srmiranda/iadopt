@@ -58,3 +58,31 @@
     </p>
   </div>
 </div>
+
+<% @shelters.each do |shelter| %>
+  <article class="shelter-card row wide">
+    <div class="large-6 columns">
+      <div class="row">
+        <div class="shelter-card-image small-8 small-centered large-uncentered columns">
+          <% if shelter.url.blank? %>
+            <img src="/default.jpg">
+          <% else %>
+            <img src="<%= shelter.url %>">
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="large-6 columns" id="shelter-info">
+      <h3><%= link_to shelter.name, shelter_path(shelter) %></h3>
+      <h6><%= shelter.address %></h6>
+      <h6><%= shelter.city %>, <%= shelter.state %> <%= shelter.zip %></h6>
+      <h6><%= shelter.phone %></h6>
+      <h6><%= shelter.website %></h6>
+      <% if shelter.user_id == current_user.id %>
+        <%= link_to 'Add A Dog', new_shelter_dog_path(shelter), class: "shelter-button button tiny round" %>
+        <%= link_to 'Edit Shelter', edit_shelter_path(shelter), class: "shelter-button button tiny round" %>
+        <%= link_to "Delete Shelter", shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "shelter-button button tiny round" %>
+      <% end %>
+    </div>
+  </article>
+<% end %>

@@ -1,24 +1,27 @@
-<img src="<%= @dog.url %>" width="300px">
-<table>
-  <th>Name</th>
-  <th>Breed</th>
-  <th>Size</th>
-  <th>Kids</th>
-  <th>Age</th>
-  <th>Gender</th>
-  <th>Fixed</th>
-  <th>Shelter</th>
-<tr>
-  <td><%= @dog.name %></td>
-  <td><%= @dog.breed %></td>
-  <td><%= @dog.size %></td>
-  <td><%= @dog.kids %></td>
-  <td><%= @dog.age.to_f %></td>
-  <td><%= @dog.gender %></td>
-  <td><%= @dog.fixed %></td>
-  <td><%= link_to @dog.shelter.name, shelter_path(@dog.shelter) %></td>
-  <% if current_user = @dog.shelter.user %>
-    <td><%= link_to "Edit", edit_dog_path(@dog) %></td>
-    <td><%= link_to 'Remove', @dog, method: :delete %></td>
-  <% end %>
-</tr>
+<article class="shelter-card row wide">
+  <div class="large-6 columns">
+    <div class="row">
+      <div class="shelter-card-image small-8 small-centered large-uncentered columns">
+        <% if @dog.url.blank? %>
+          <img src="/default_dog.jpg">
+        <% else %>
+          <img src="<%= @dog.url %>">
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="large-6 columns" id="shelter-info">
+    <h3><%= @dog.name %></h3>
+    <h6><%= @dog.breed %></h6>
+    <h6><%= @dog.size %></h6>
+    <h6><%= @dog.kids %></h6>
+    <h6><%= @dog.age.to_f %></h6>
+    <h6><%= @dog.gender %></h6>
+    <h6><%= @dog.fixed %></h6>
+    <h6><%= link_to @dog.shelter.name, shelter_path(@dog.shelter) %></h6>
+    <% if current_user == @dog.shelter.user %>
+      <td><%= link_to "Edit", edit_dog_path(@dog), class: "shelter-button button tiny round" %></td>
+      <td><%= link_to 'Remove', @dog, method: :delete, class: "shelter-button button tiny round" %></td>
+    <% end %>
+  </div>
+</article>
