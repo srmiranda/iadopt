@@ -1,7 +1,7 @@
 class Shelter < ActiveRecord::Base
   belongs_to :user
 
-  has_many :dogs
+  has_many :dogs, dependent: :destroy
   has_many :employees
   has_many :users, through: :employees
 
