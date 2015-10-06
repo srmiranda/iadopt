@@ -22,6 +22,7 @@ end
 
 group :test do
   gem 'coveralls', require: false
+  gem 'selenium-webdriver'
 end
 
 gem 'rspec-rails', group: [:development, :test]
