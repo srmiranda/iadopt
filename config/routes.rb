@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :dogs, only: [:index, :show, :edit, :update, :destroy]
 
-  resources :shelters, only: [:index, :show, :new, :create] do
+  resources :shelters do
     resources :dogs, only: [:new, :create]
   end
 

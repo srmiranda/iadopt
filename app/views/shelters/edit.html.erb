@@ -1,0 +1,36 @@
+<div class="preferences large-6 small-12 large-uncentered small-centered columns">
+  <fieldset>
+  <legend>Update Your Shelter</legend>
+    <%= form_for @shelter do |f| %>
+
+      <%= f.label :name, "Name of your organization:" %>
+      <%= f.text_area :name %>
+
+      <%= f.label :address %>
+      <%= f.text_area :address %>
+
+      <%= f.label :city %>
+      <%= f.text_area :city %>
+
+      <%= f.label :state %>
+      <%= f.text_area :state %>
+
+      <%= f.label :zip %>
+      <%= f.number_field :zip %>
+
+      <%= f.label :phone %>
+      <%= f.text_area :phone %>
+
+      <%= f.label :website, "Website URL (optional)"%>
+      <%= f.text_area :website %>
+
+      <%= f.label :email, "Contact Email (optional)" %>
+      <%= f.text_area :email %>
+
+      <%= f.label :url, "Picture (optional)" %>
+      <%= f.text_area :url %>
+
+      <%= f.submit "Submit", class: "button tiny expand round" %>
+      <% end %>
+  </fieldset>
+</div>
