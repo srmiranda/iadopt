@@ -24,6 +24,7 @@ class DogsController < ApplicationController
       redirect_to dog_path(@dog)
     else
       flash[:errors] = @dog.errors.full_messages.join(", ")
+      @shelter = Shelter.find(params[:shelter_id])
       render :new
     end
   end

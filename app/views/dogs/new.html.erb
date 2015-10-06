@@ -1,7 +1,8 @@
-<div class="preferences large-6 small-10 columns">
+<div class="preferences large-6 small-10 small-centered columns">
   <fieldset>
   <legend>Add A Dog</legend>
     <%= form_for [@shelter, @dog] do |f| %>
+    <%= link_to "Back", shelter_path(@shelter), class: "right button tiny round" %>
 
       <%= f.label :name, 'Name' %>
       <%= f.text_area :name %>
