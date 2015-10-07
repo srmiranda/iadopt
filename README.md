@@ -2,4 +2,4 @@
 
 [![Code Climate](https://codeclimate.com/repos/5601ffd2e30ba00ad3000004/badges/19db52b003a75ddd477b/gpa.svg)](https://codeclimate.com/repos/5601ffd2e30ba00ad3000004/feed)
 
-![Coverage Status](https://coveralls.io/repos/srmiranda/iadopt/badge.png)
+[![Coverage Status](https://coveralls.io/repos/srmiranda/iadopt/badge.svg?branch=master&service=github)](https://coveralls.io/github/srmiranda/iadopt?branch=master)
