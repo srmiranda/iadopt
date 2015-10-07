@@ -8,4 +8,8 @@ class HomesController < ApplicationController
       redirect_to user_session_path
     end
   end
+
+  def show
+    @shelter = Shelter.first
+  end
 end
