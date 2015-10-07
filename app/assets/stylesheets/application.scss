@@ -27,6 +27,14 @@ body {
   background-size: cover;
 }
 
+.map {
+  height: 400px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 .title {
   font-family: 'Droid Sans', sans-serif;
   font-weight: bold;

@@ -4,9 +4,10 @@
   <title>Iadopt</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYSeuePH-Q0h18HUYP33spE3OCQHfnoi4"></script>
+  <script src="/google_map.js"></script>
 </head>
-<body>
+<body onload="initialize()">
   <%- flash.each do |key, value| -%>
     <% if key == 'notice' %>
       <div class="alert-box success radius flash-<%= key %>">

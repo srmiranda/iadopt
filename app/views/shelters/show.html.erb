@@ -26,31 +26,32 @@
 
 <div class="row">
   <div class="left large-6 small-12 columns" id="dog-table">
-  <% unless @dogs.nil? %>
-    <table id="shelters">
-      <th>Name</th>
-      <th>Breed</th>
-      <th>Size</th>
-      <th>Kids</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Fixed</th>
-      <% @dogs.each do |dog| %>
-      <tr>
-        <td><%= link_to dog.name, dog_path(dog) %></td>
-        <td><%= dog.breed %></td>
-        <td><%= dog.size %></td>
-        <td><%= dog.kids %></td>
-        <td><%= dog.age.to_f %></td>
-        <td><%= dog.gender %></td>
-        <td><%= dog.fixed %></td>
-      </tr>
-      <% end %>
-    </table>
-  <% end %>
-</div>
-
-  <div class="right large-5 small-12 large-uncentered medium-centered small-centered columns" id="google-map">
-    <img src="http://www.evoluted.net/thinktank/wp-content/uploads/2011/05/map.jpg">
+    <% unless @dogs.nil? %>
+      <table id="shelters">
+        <th>Name</th>
+        <th>Breed</th>
+        <th>Size</th>
+        <th>Kids</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Fixed</th>
+        <% @dogs.each do |dog| %>
+        <tr>
+          <td><%= link_to dog.name, dog_path(dog) %></td>
+          <td><%= dog.breed %></td>
+          <td><%= dog.size %></td>
+          <td><%= dog.kids %></td>
+          <td><%= dog.age.to_f %></td>
+          <td><%= dog.gender %></td>
+          <td><%= dog.fixed %></td>
+        </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+  <div id="map_canvas" class="map right large-5 columns"></div>
+  <div>
+    <input class="hidden" id="address" type="textbox" style="width:60%" value="<%= @shelter.address %> <%= @shelter.city %>, <%= @shelter.state %>">
+    <input class="hidden" type="button" value="Geocode" onclick="codeAddress()">
   </div>
 </div>
