@@ -25,20 +25,11 @@ body {
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
-  padding: 25px;
-}
-
-.hidden {
-  visibility: hidden;
 }
 
 .title {
   font-family: 'Droid Sans', sans-serif;
   font-weight: bold;
-}
-
-.container {
-
 }
 
 .subheading {
@@ -73,7 +64,12 @@ body {
 }
 
 .welcome-background {
-  padding-top: 15px;
+  background: url("/sunny_day.jpg") no-repeat center fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  margin: 0;
 }
 
 .alert-box {
