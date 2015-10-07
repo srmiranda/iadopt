@@ -73,12 +73,7 @@ body {
 }
 
 .welcome-background {
-  background: url("/sunny_day.jpg") no-repeat center fixed;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
-  margin: 0;
+  padding-top: 15px;
 }
 
 .alert-box {
