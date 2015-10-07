@@ -25,10 +25,7 @@ body {
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
-}
-
-.map {
-  height: 400px;
+  padding: 25px;
 }
 
 .hidden {
@@ -191,11 +188,6 @@ body {
 
 #dog-table {
   padding: 0;
-}
-
-#google-map {
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 .shelter-card {
