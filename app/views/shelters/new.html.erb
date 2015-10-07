@@ -41,9 +41,9 @@
   </div>
   <div class="row">
     <div class="quote-box panel large-5 columns">
-      <p>“Humanity's true moral test, its fundamental test…consists of its
-        attitude towards those who are at its mercy: animals.”</br>
-        ― Milan Kundera</p>
+      <% unless @quote.nil? %>
+        <p><%= @quote.body %></p>
+      <% end %>
     </div>
   </div>
 </div>

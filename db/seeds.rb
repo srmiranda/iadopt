@@ -54,6 +54,170 @@ breed_list = [
 "Mixed-Breed"
 ]
 
+quotes = [["You can say any foolish thing to a dog, and the dog will give you a look that
+says, ‘Wow, you’re right! I never would’ve thought of that!’ —Dave Barry"],
+
+["A dog teaches a boy fidelity, perseverance, and to turn around three times
+before lying down. —Robert Benchley"],
+
+["A dog is the only thing on earth that loves you more than he loves himself.
+—Josh Billings"],
+
+["Hounds follow those who feed them. ―Otto von Bismarck"],
+
+["Dogs are not our whole life, but they make our lives whole. —Roger Caras"],
+
+["Every dog has his day, unless he loses his tail, then he has a weak-end.
+—June Carter Cash"],
+
+["Dogs are wise. They crawl away into a quiet corner and lick their wounds
+and do not rejoin the world until they are whole once more.
+—Agatha Christie"],
+
+["The world would be a nicer place if everyone had the ability to love as
+unconditionally as a dog. ―M.K. Clinton"],
+
+["The better I get to know men, the more I find myself loving dogs.
+—Charles de Gaulle"],
+
+["The only creatures that are evolved enough to convey pure love are dogs
+and infants. —Johnny Depp"],
+
+["Dogs are better than human beings because they know but do not tell.
+—Emily Dickinson"],
+
+["What counts is not necessarily the size of the dog in the fight; it’s the
+size of the fight in the dog. —Dwight D. Eisenhower"],
+
+["Why does watching a dog be a dog fill one with happiness?”
+—Jonathan Safran Foer"],
+
+["There are three faithful friends: an old wife, an old dog, and ready money.
+—Benjamin Franklin"],
+
+["Dogs love their friends and bite their enemies, quite unlike people, who are
+incapable of pure love and always have to mix love and hate.
+—Sigmund Freud"],
+
+["Women and cats will do as they please, and men and dogs should relax and get
+used to the idea. —Robert A. Heinlein"],
+
+["When an eighty-five pound mammal licks your tears away, then tries to sit on
+your lap, it’s hard to feel sad.
+―Kristan Higgins"],
+
+["To his dog, every man is Napoleon; hence the constant popularity of dogs.
+—Aldous Huxley"],
+
+["There are times when even the best manager is like the little boy with the big
+dog — waiting to see where the dog wants to go so he can take him there.
+—Lee Iacocca"],
+
+["Anybody who doesn’t know what soap tastes like never washed a dog.
+—Franklin P. Jones"],
+
+["A dog can’t think that much about what he’s doing, he just does what feels
+right. ―Barbara Kingsolver"],
+
+["Once you have had a wonderful dog, a life without one, is a life diminished.
+—Dean Koontz"],
+
+["Don’t accept your dog’s admiration as conclusive evidence that you are
+wonderful. —Ann Landers"],
+
+["I care not for a man’s religion whose dog and cat are not the better for it.
+—Abraham Lincoln"],
+
+["A bone to the dog is not charity. Charity is the bone shared with the dog,
+when you are just as hungry as the dog.
+—Jack London"],
+
+["Outside of a dog, a book is man’s best friend. Inside of a dog it’s too dark
+to read. —Groucho Marx"],
+
+["Dogs don’t rationalize. They don’t hold anything against a person. They don’t
+see the outside of a human but the inside of a human.
+—Cesar Millan"],
+
+["Dogs never bite me. Just humans.
+—Marilyn Monroe"],
+
+["No one appreciates the very special genius of your conversation as
+the dog does.
+—Christopher Morley"],
+
+["If you think dogs can’t count, try putting three dog biscuits in your pocket
+and then give him only two of them.
+—Phil Pastoret"],
+
+["I think dogs are the most amazing creatures; they give unconditional love. For
+me, they are the role model for being alive.
+—Gilda Radner"],
+
+["If there are no dogs in Heaven, then when I die I want to go where they went.
+—Will Rogers"],
+
+["The average dog is a nicer person than the average person.
+—Andy Rooney"],
+
+["I wonder if other dogs think poodles are members of a weird religious cult.
+—Rita Rudner"],
+
+["Happiness is a warm puppy.
+—Charles M. Schulz"],
+
+["If you eliminate smoking and gambling, you will be amazed to find that almost
+all an Englishman’s pleasures can be, and mostly are, shared by his dog.
+—George Bernard Shaw"],
+
+["I’ve seen a look in dogs’ eyes, a quickly vanishing look of amazed contempt,
+and I am convinced that basically dogs think humans are nuts.
+—John Steinbeck"],
+
+["You think dogs will not be in heaven? I tell you, they will be there long
+before any of us.
+—Robert Louis Stevenson"],
+
+["Dogs got personality. Personality goes a long way.
+—Quentin Tarantino"],
+
+["Some of my best leading men have been dogs and horses.
+—Elizabeth Taylor"],
+
+["If I have any beliefs about immortality, it is that certain dogs I have known
+will go to heaven, and very, very few persons.
+—James Thurber"],
+
+["A hungry dog hunts best.
+—Lee Trevino"],
+
+["If you want a friend in Washington, get a dog.
+—Harry S. Truman"],
+
+["Heaven goes by favor. If it went by merit, you would stay out and your dog
+would go in.
+—Mark Twain"],
+
+["Ever consider what our dogs must think of us? I mean, here we come back from a
+grocery store with the most amazing haul, chicken, pork, half a cow. They must
+think we’re the greatest hunters on earth!
+—Anne Tyler"],
+
+["A dog will teach you unconditional love. If you can have that in your life,
+things won’t be too bad.
+—Robert Wagner"],
+
+["Let sleeping dogs lie.
+—Robert Walpole"],
+
+["My dog is worried about the economy because Alpo is up to $3.00 a can. That’s
+almost $21.00 in dog money.
+—Joe Weinstein"],
+
+["If a dog will not come to you after having looked you in the face, you should
+go home and examine your conscience.
+—Woodrow Wilson"]]
+
 sizes = [
   "small",
   "medium",
@@ -666,4 +830,8 @@ Shelter.create(
   Dog.create(name: Faker::Name.first_name, breed: breed_list.sample, size: sizes.sample,
   kids: kids.sample, age: rand(0.5..10.0).round(1), gender: gender.sample,
   fixed: fixed.sample, shelter_id: rand(1..50))
+end
+
+quotes.each do |quote|
+  Quote.create(body: quote[0])
 end

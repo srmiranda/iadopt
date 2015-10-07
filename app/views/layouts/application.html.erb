@@ -4,7 +4,8 @@
   <title>Iadopt</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYSeuePH-Q0h18HUYP33spE3OCQHfnoi4"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_KEY'] %>"></script>
   <script src="/google_map.js"></script>
 </head>
 <body onload="initialize()">
