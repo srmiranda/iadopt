@@ -9,6 +9,7 @@ class SheltersController < ApplicationController
 
   def new
     @shelter = Shelter.new
+    @quote = Quote.all.sample
   end
 
   def create

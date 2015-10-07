@@ -16,6 +16,10 @@ class DogsController < ApplicationController
     end
   end
 
+  def search
+    @quote = Quote.all.sample
+  end
+
   def create
     @dog = Dog.new(dog_params)
     @dog.shelter = Shelter.find(params[:shelter_id])
