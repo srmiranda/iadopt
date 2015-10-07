@@ -20,7 +20,7 @@ feature 'view dog request form', %{
   [x] I must see a list of matching dogs after submission
 } do
 
-  scenario 'visitor visits dog survey form' do
+    scenario 'visitor visits dog survey form' do
     user = FactoryGirl.create(:user)
 
     visit root_path

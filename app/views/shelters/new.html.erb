@@ -41,7 +41,9 @@
   </div>
   <div class="row">
     <div class="quote-box panel large-5 columns">
-      <p><%= @quote.body %></p>
+      <% unless @quote.nil? %>
+        <p><%= @quote.body %></p>
+      <% end %>
     </div>
   </div>
 </div>
