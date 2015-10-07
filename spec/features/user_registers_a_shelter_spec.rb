@@ -22,7 +22,6 @@ feature 'view shelter creation form', %{
 
     expect(page).to have_content('Welcome to iAdopt!')
     click_link 'Register A Shelter'
-    save_and_open_page
     expect(page).to have_content('Register A Shelter')
     register_shelter
     expect(page).to have_content('Launch Shelter')

@@ -49,9 +49,15 @@
       </table>
     <% end %>
   </div>
-  <div id="map_canvas" class="map right large-5 columns"></div>
-  <div>
-    <input class="hidden" id="address" type="textbox" style="width:60%" value="<%= @shelter.address %> <%= @shelter.city %>, <%= @shelter.state %>">
-    <input class="hidden" type="button" value="Geocode" onclick="codeAddress()">
+  <div align="right">
+    <iframe
+     width="400"
+     height="400"
+     frameborder="0" style="border:0"
+     src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_KEY_TEST'] %>
+      &q=<%= @shelter.address %>,<%= @shelter.city %>,<%= @shelter.state %>
+      &attribution_source=Google+Maps+Embed+API
+      &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @shelter.address %>, <%= @shelter.city %>, <%= @shelter.state %>">
+    </iframe>
   </div>
 </div>
