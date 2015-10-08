@@ -1,28 +1,38 @@
-<article class="shelter-card row wide">
-    <div class="large-6 columns">
-      <div class="row">
-        <div class="shelter-card-image small-8 small-centered large-uncentered columns">
-          <% if @shelter.url.blank? %>
-            <img src="/default.jpg">
-          <% else %>
-            <img src="<%= @shelter.url %>">
-          <% end %>
-        </div>
+<article class="panel row wide">
+  <div class="large-6 columns">
+      <div class="shelter-image small-12 small-centered large-uncentered columns">
+        <% if @shelter.url.blank? %>
+          <img src="/default.jpg">
+        <% else %>
+          <img src="<%= @shelter.url %>">
+        <% end %>
       </div>
-    </div>
-    <div class="large-6 columns" id="shelter-info">
-      <h3><%= @shelter.name %></h3>
-      <h6><%= @shelter.address %></h6>
-      <h6><%= @shelter.city %>, <%= @shelter.state %> <%= @shelter.zip %></h6>
-      <h6><%= @shelter.phone %></h6>
-      <h6><%= @shelter.website %></h6>
-      <% if @shelter.user_id == current_user.id %>
-        <%= link_to 'Add A Dog', new_shelter_dog_path(@shelter), class: "shelter-button button tiny round" %>
-        <%= link_to 'Edit Shelter', edit_shelter_path(@shelter), class: "shelter-button button tiny round" %>
-        <%= link_to "Delete Shelter", @shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "shelter-button button tiny round" %>
-      <% end %>
-    </div>
-  </article>
+      <hr />
+    <div>
+    <h3><%= @shelter.name %></h3>
+    <h6><%= @shelter.address %></h6>
+    <h6><%= @shelter.city %>, <%= @shelter.state %> <%= @shelter.zip %></h6>
+    <h6><%= @shelter.phone %></h6>
+    <h6><%= @shelter.website %></h6>
+    <% if @shelter.user_id == current_user.id %>
+      <%= link_to 'Add A Dog', new_shelter_dog_path(@shelter), class: "shelter-button button tiny round" %>
+      <%= link_to 'Edit Shelter', edit_shelter_path(@shelter), class: "shelter-button button tiny round" %>
+      <%= link_to "Delete Shelter", @shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "shelter-button button tiny round" %>
+    <% end %>
+  </div>
+  </div>
+  <div align="right">
+    <iframe
+     width="400"
+     height="400"
+     frameborder="0" style="border:0"
+     src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_KEY'] %>
+      &q=<%= @shelter.address %>,<%= @shelter.city %>,<%= @shelter.state %>
+      &attribution_source=Google+Maps+Embed+API
+      &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @shelter.address %>, <%= @shelter.city %>, <%= @shelter.state %>">
+    </iframe>
+  </div>
+</article>
 
 <div class="row">
   <div class="left large-6 small-12 columns" id="dog-table">
@@ -49,15 +59,5 @@
       </table>
     <% end %>
   </div>
-  <div align="right">
-    <iframe
-     width="400"
-     height="400"
-     frameborder="0" style="border:0"
-     src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_KEY'] %>
-      &q=<%= @shelter.address %>,<%= @shelter.city %>,<%= @shelter.state %>
-      &attribution_source=Google+Maps+Embed+API
-      &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @shelter.address %>, <%= @shelter.city %>, <%= @shelter.state %>">
-    </iframe>
-  </div>
+  <div id="chart" style="margin: 0 auto" class="right large-6 columns"></div>
 </div>

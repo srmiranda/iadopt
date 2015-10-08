@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/find_a_dog' => 'dogs#search'
 
-  get '/test' => 'shelters#test'
+  get '/test' => 'dogs#test'
 
   devise_for :users, controllers: { registrations: :registrations }
 
