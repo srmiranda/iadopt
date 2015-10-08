@@ -4,7 +4,10 @@
   <title>Iadopt</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="animate.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="/highchart.js"></script>
 </head>
 <body>
   <%- flash.each do |key, value| -%>
@@ -25,5 +28,7 @@
 
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
 </body>
 </html>

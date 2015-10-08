@@ -27,7 +27,28 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
-    @dogs = @shelter.dogs
+    @dogs = @shelter.dogs.order(breed: :asc)
+    respond_to do |format|
+      format.html
+      format.json do
+        dog_breeds = @dogs.map { |dog| dog.breed }
+        dog_hash = Hash.new
+        dog_array = []
+        dog_breeds.each do |breed|
+          if dog_hash[breed]
+            dog_hash[breed] += 1
+          else
+            dog_hash[breed] = 1
+          end
+        end
+
+        dog_hash.each do |key, value|
+          dog_array << {name: key, y: value}
+        end
+
+        render json: [dog_array]
+      end
+    end
   end
 
   def edit

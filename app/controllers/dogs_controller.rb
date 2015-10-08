@@ -1,6 +1,10 @@
 class DogsController < ApplicationController
   def index
-    @dogs = Dog.search(search_params)
+    if params[:search]
+      @dogs = Dog.search(search_params)
+    else
+      @dogs = Dog.all.order("breed")
+    end
   end
 
   def show
