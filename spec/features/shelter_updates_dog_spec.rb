@@ -18,7 +18,7 @@ feature 'shelter owner updates a dog', %{
     visit root_path
     login(user)
 
-    expect(page).to have_content('Welcome to iAdopt!')
+    expect(page).to have_content('All About Us')
     click_link 'Register A Shelter'
 
     expect(page).to have_content('Register A Shelter')

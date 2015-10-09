@@ -26,7 +26,7 @@ feature 'view dog request form', %{
     visit root_path
     login(user)
 
-    expect(page).to have_content('Welcome to iAdopt!')
+    expect(page).to have_content('All About Us')
     click_link 'Find A Dog'
 
     expect(page).to have_content('Find the Perfect Pet')
