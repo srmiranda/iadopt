@@ -17,7 +17,7 @@ feature 'user signs in', %{
 
     click_button 'Log in'
 
-    expect(page).to have_content('Welcome to iAdopt!')
+    expect(page).to have_content('All About Us')
   end
 
   scenario 'visit home page and sign up' do
@@ -38,6 +38,6 @@ feature 'user signs in', %{
     click_button 'Sign up'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_content('Welcome to iAdopt!')
+    expect(page).to have_content('All About Us')
   end
 end

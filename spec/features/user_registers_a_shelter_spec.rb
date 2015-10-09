@@ -20,7 +20,7 @@ feature 'view shelter creation form', %{
     visit root_path
     login(user)
 
-    expect(page).to have_content('Welcome to iAdopt!')
+    expect(page).to have_content('All About Us')
     click_link 'Register A Shelter'
     expect(page).to have_content('Register A Shelter')
     register_shelter
