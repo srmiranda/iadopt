@@ -1,62 +1,67 @@
-<div class="row">
-  <div class="home-image-box large-6 columns">
-    <img src="/dog4.jpg"><br>
-      <% if current_user.shelters.present? %>
-        <div class="panel">
-            <h5 class="title">Manage Your Shelter(s):</h5>
-            <table id="shelters">
-              <tr>
-                <th>Name</th>
-                <th>Phone</th>
-              </tr>
-            <% current_user.shelters.each do |shelter| %>
-              <tr>
-                <td><%= link_to shelter.name, shelter_path(shelter.id) %></td>
-                <td><%= shelter.phone %></td>
-              </tr>
-            <% end %>
-            </table>
-        </div>
-      <% end %>
+<div id="home-background" class="large-9 small-centered columns">
+  <div class="row">
+    <div class="home-image-box large-6 columns">
+      <img class="home-dog" src="/dog4.jpg"><br>
+        <% if current_user.shelters.present? %>
+          <div class="panel">
+              <h5 class="title">Manage Your Shelter(s):</h5>
+              <table id="shelters">
+                <tr>
+                  <th>Name</th>
+                  <th>Phone</th>
+                </tr>
+              <% current_user.shelters.each do |shelter| %>
+                <tr>
+                  <td><%= link_to shelter.name, shelter_path(shelter.id) %></td>
+                  <td><%= shelter.phone %></td>
+                </tr>
+              <% end %>
+              </table>
+          </div>
+        <% end %>
+      </br>
+      <div class="twitter-box">
+        <a class="twitter-timeline" href="https://twitter.com/ASPCA"
+        data-widget-id="652535712089276416">Tweets by @ASPCA</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
+        p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id))
+        {js=d.createElement(s);js.id=id;js.src=p+
+        "://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore
+        (js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
     </br>
-    <a class="twitter-timeline" href="https://twitter.com/ASPCA"
-    data-widget-id="652535712089276416">Tweets by @ASPCA</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
-    p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id))
-    {js=d.createElement(s);js.id=id;js.src=p+
-    "://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore
-    (js,fjs);}}(document,"script","twitter-wjs");</script>
-  </div>
-
-  <div class="large-6 columns">
-
-      <div class="panel">
-        <h5 class="title">Looking to Adopt?</h5>
-          <h6 class="subheader">Let us help you find that perfect pet you've been waiting for!</h6>
-          <%= link_to "Find A Dog", find_a_dog_path,
-          class: "small button primary radius expand" %>
-      </div>
-
-      <div class="panel">
-        <h5 class="title">Have A Shelter?</h5>
-          <h6 class="subheader">We can help you keep an active inventory of all your dogs for adoption.</h6>
-          <%= link_to "Register A Shelter", new_shelter_path,
-          class: "shelter-button small button radius expand" %>
-      </div>
-  </div>
-
-  <div class="large-6 small-12 columns">
-    <div class="panel">
-      <h3 class="title mobile-welcome show-for-small">All About Us<hr/></h3>
-      <h4 class="animated slideInRight title hide-for-small">All About Us</h4>
-      <hr/>
-      <h5 class="subheader">Our mission is to help as many dogs as possible get adopted and find forever
-      homes. We have devised a search engine to supply you with all the local and available dogs that
-      fit your needs. So many dogs need a home and the only way to ensure that is to put them in the proper
-      home from the start.
-      <hr />
-      If you run a shelter yourself, there are tools here for you as well! Please register your shelter with
-      us and gain access to our inventory tracking system. You can now track and store all your dogs that are
-      available for adoption and make them readily available for viewing!</h5>
     </div>
+
+    <div class="large-6 columns">
+
+        <div class="panel">
+          <h5 class="title">Looking to Adopt?</h5>
+            <h6 class="subheader">Let us help you find that perfect pet you've been waiting for!</h6>
+            <%= link_to "Find A Dog", find_a_dog_path,
+            class: "small button primary radius expand" %>
+        </div>
+
+        <div class="panel">
+          <h5 class="title">Have A Shelter?</h5>
+            <h6 class="subheader">We can help you keep an active inventory of all your dogs for adoption.</h6>
+            <%= link_to "Register A Shelter", new_shelter_path,
+            class: "shelter-button small button radius expand" %>
+        </div>
+    </div>
+
+    <div class="large-6 small-12 columns">
+      <div class="panel">
+        <h3 class="title mobile-welcome show-for-small">All About Us<hr/></h3>
+        <h4 class="animated slideInRight title hide-for-small">All About Us</h4>
+        <hr/>
+        <h5 class="subheader">Our mission is to help as many dogs as possible get adopted and find forever
+        homes. We have devised a search engine to supply you with all the local and available dogs that
+        fit your needs. So many dogs need a home and the only way to ensure that is to put them in the proper
+        home from the start.
+        <hr />
+        If you run a shelter yourself, there are tools here for you as well! Please register your shelter with
+        us and gain access to our inventory tracking system. You can now track and store all your dogs that are
+        available for adoption and make them readily available for viewing!</h5>
+      </div>
+  </div>
 </div>
