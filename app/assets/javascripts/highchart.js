@@ -1,7 +1,7 @@
 $(function () {
   $.ajax({
       method: 'GET',
-      url: window.location.href,
+      https: window.location.href,
       dataType: 'json'
   })
 
