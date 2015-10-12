@@ -138,6 +138,10 @@ body {
   margin: 0;
 }
 
+.gmap {
+  margin-top: 5px;
+}
+
 .owner-buttons {
   margin-top: 10px;
 }
@@ -186,15 +190,16 @@ body {
   margin-top: 30px;
 }
 
-.quote-box {
-  margin-left: 30px;
+.new-shelter-image {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 30px;
 }
 
-.new-shelter-image {
-  margin-left: 30px;
-  margin-top: 30px;
-  padding-bottom: 30px;
-  padding-top: 30px;
+.quote-box {
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .alert-box {
