@@ -6,7 +6,7 @@ $(function () {
   })
 
   .done(function(data){
-    var breedNames = data[0][1]
+    var breedNames = data[0][1];
 
     $('#chart').highcharts({
         chart: {
