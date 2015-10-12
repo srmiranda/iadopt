@@ -11,6 +11,7 @@
     <section class="top-bar-section bar-links">
       <ul class="left">
         <%- if current_user -%>
+          <li><%= link_to "Back", :back %></li>
           <li><%= link_to "My Profile", user_path(current_user) %></li>
           <li><%= link_to 'All Shelters', shelters_path %></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
