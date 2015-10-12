@@ -6,6 +6,7 @@ $(function () {
   })
 
   .done(function(data){
+    var breedNames = data[0][1]
 
     $('#chart').highcharts({
         chart: {
@@ -20,9 +21,7 @@ $(function () {
             }
         },
         xAxis: {
-            title: {
-                text: 'Breed Name'
-            }
+            categories: breedNames
         },
         title: {
           text: 'Breed Amounts Available'
