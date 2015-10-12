@@ -8,7 +8,7 @@
   </p>
 </div>
 
-<div class="shelter-box-small show-for-small">
+<div class="shelter-box-small show-for-small small-centered columns">
   <h3 class="shelter-title-small"><%= @shelter.name %><h3>
   <p class="shelter-info-small title">
     <%= @shelter.address %> •
@@ -31,9 +31,9 @@
 
 <div class="row">
 <div id="chart" style="margin: 0 auto" class="left large-6 small-12 large-uncentered small-centered columns"></div>
-  <div align="right" clas="large-uncentered small-12 small-centered columns">
+  <div align="right" class="small-12 small-centered columns">
     <iframe
-     width="450"
+     width="375"
      height="400"
      frameborder="0" style="border:0"
      src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_KEY'] %>
@@ -46,7 +46,7 @@
 
 <div class="small-11 small-centered columns">
   <% @dogs.each do |dog| %>
-    <div class="large-4 medium-6 small-11 columns">
+    <div class="large-4 medium-6 small-12 columns">
       <div class="text-center dog-card">
         <% if dog.url.blank? %>
           <a href="<%= dog_path(dog) %>"><img src="/default_dog.jpg" class="dog-thumb"></a>

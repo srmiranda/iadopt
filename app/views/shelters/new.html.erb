@@ -37,13 +37,14 @@
     </fieldset>
   </div>
 
-  <div class="panel new-shelter-image large-5 columns">
-    <img src="/dog1.jpg" class="large-12 small-12 columns"></br>
+  <div class="new-shelter-image large-5 columns">
+    <img src="/dog1.jpg" class="panel large-12 columns">
+    <hr />
   </div>
   <div class="row">
-    <div class="quote-box panel large-5 columns">
+    <div class="quote-box panel text-center large-5 columns">
       <% unless @quote.nil? %>
-        <p><%= @quote.body %></p>
+        <%= @quote.body %>
       <% end %>
     </div>
   </div>
