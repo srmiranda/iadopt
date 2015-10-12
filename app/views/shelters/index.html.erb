@@ -1,22 +1,23 @@
-<% @shelters.each do |shelter| %>
-  <article class="shelter-index shelter-card row wide">
-    <div class="large-6 columns">
-      <div class="row">
-        <div class="shelter-card-image small-8 small-centered large-uncentered columns">
-          <% if shelter.url.blank? %>
-            <a href="<%= shelter_path(shelter) %>"><img src="/default.jpg"></a>
-          <% else %>
-            <a href="<%= shelter_path(shelter) %>"><img src="<%= shelter.url %>"></a>
-          <% end %>
-        </div>
+<div class="text-center shelter-banner">
+  <img src="/shelter_banner1.jpg">
+</div>
+</br>
+<div class="small-11 small-centered columns">
+  <% @shelters.each do |shelter| %>
+    <div class="large-4 medium-6 small-11 columns">
+      <div class="text-center shelter-card">
+        <% if shelter.url.blank? %>
+          <a href="<%= shelter_path(shelter) %>"><img src="/default.jpg" class="dog-thumb"></a>
+        <% else %>
+          <a href="<%= shelter_path(shelter) %>"><img src="<%= shelter.url %>" class="dog-thumb"></a>
+        <% end %>
+          <ul>
+            <li class="title text-center"><%= shelter.name %></li>
+            <li class="title text-center"><%= shelter.address %></li>
+            <li class="title text-center"><%= shelter.city %> • <%= shelter.state %> • <%= shelter.zip %></li>
+            <li class="title text-center"><%= shelter.phone %></li>
+          </ul>
       </div>
     </div>
-    <div class="large-6 columns" id="shelter-info">
-      <h3><%= link_to shelter.name, shelter_path(shelter) %></h3>
-      <h6><%= shelter.address %></h6>
-      <h6><%= shelter.city %>, <%= shelter.state %> <%= shelter.zip %></h6>
-      <h6><%= shelter.phone %></h6>
-      <h6><%= shelter.website %></h6>
-    </div>
-  </article>
-<% end %>
+  <% end %>
+</div>

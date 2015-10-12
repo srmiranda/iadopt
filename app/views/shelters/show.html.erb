@@ -1,29 +1,38 @@
-<article class="panel row wide">
-  <div class="large-6 columns">
-      <div class="shelter-image small-12 small-centered large-uncentered columns">
-        <% if @shelter.url.blank? %>
-          <img src="/default.jpg">
-        <% else %>
-          <img src="<%= @shelter.url %>">
-        <% end %>
-      </div>
-      <hr />
-    <div>
-    <h3><%= @shelter.name %></h3>
-    <h6><%= @shelter.address %></h6>
-    <h6><%= @shelter.city %>, <%= @shelter.state %> <%= @shelter.zip %></h6>
-    <h6><%= @shelter.phone %></h6>
-    <h6><%= @shelter.website %></h6>
-    <% if @shelter.user_id == current_user.id %>
-      <%= link_to 'Add A Dog', new_shelter_dog_path(@shelter), class: "shelter-button button tiny round" %>
-      <%= link_to 'Edit Shelter', edit_shelter_path(@shelter), class: "shelter-button button tiny round" %>
-      <%= link_to "Delete Shelter", @shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "shelter-button button tiny round" %>
-    <% end %>
-  </div>
-  </div>
-  <div align="right">
+<div class="shelter-box large-9 small-11 small-centered columns hide-for-small">
+  <h3 class="shelter-title"><%= @shelter.name %></h3>
+  <p class="shelter-info title">
+    <%= @shelter.address %> •
+    <%= @shelter.city %> • <%= @shelter.state %> • <%= @shelter.zip %> •
+    <%= @shelter.phone %>
+    • <%= @shelter.website %>
+  </p>
+</div>
+
+<div class="shelter-box-small show-for-small">
+  <h3 class="shelter-title-small"><%= @shelter.name %><h3>
+  <p class="shelter-info-small title">
+    <%= @shelter.address %> •
+    <%= @shelter.city %> • <%= @shelter.state %> • <%= @shelter.zip %> •
+    <%= @shelter.phone %>
+    • <%= @shelter.website %>
+  </p>
+</div>
+
+<div class="owner-buttons text-center small-centered columns">
+  <% if @shelter.user_id == current_user.id %>
+    </br>
+    <%= link_to 'Add A Dog', new_shelter_dog_path(@shelter), class: "shelter-button button tiny round" %>
+    <%= link_to 'Edit Shelter', edit_shelter_path(@shelter), class: "shelter-button button tiny round" %>
+    <%= link_to "Delete Shelter", @shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "shelter-button button tiny round" %>
+  <% end %>
+</div>
+</br>
+
+<div class="row">
+<div id="chart" style="margin: 0 auto" class="left large-6 small-12 large-uncentered small-centered columns"></div>
+  <div align="right" clas="large-uncentered small-12 small-centered columns">
     <iframe
-     width="400"
+     width="450"
      height="400"
      frameborder="0" style="border:0"
      src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_KEY'] %>
@@ -32,32 +41,22 @@
       &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @shelter.address %>, <%= @shelter.city %>, <%= @shelter.state %>">
     </iframe>
   </div>
-</article>
+</div>
 
-<div class="row">
-  <div class="left large-6 small-12 columns" id="dog-table">
-    <% unless @dogs.nil? %>
-      <table id="shelters">
-        <th>Name</th>
-        <th>Breed</th>
-        <th>Size</th>
-        <th>Kids</th>
-        <th>Age</th>
-        <th>Gender</th>
-        <th>Fixed</th>
-        <% @dogs.each do |dog| %>
-        <tr>
-          <td><%= link_to dog.name, dog_path(dog) %></td>
-          <td><%= dog.breed %></td>
-          <td><%= dog.size %></td>
-          <td><%= dog.kids %></td>
-          <td><%= dog.age.to_f %></td>
-          <td><%= dog.gender %></td>
-          <td><%= dog.fixed %></td>
-        </tr>
+<div class="small-11 small-centered columns">
+  <% @dogs.each do |dog| %>
+    <div class="large-4 medium-6 small-11 columns">
+      <div class="text-center dog-card">
+        <% if dog.url.blank? %>
+          <a href="<%= dog_path(dog) %>"><img src="/default_dog.jpg" class="dog-thumb"></a>
+        <% else %>
+          <a href="<%= dog_path(dog) %>"><img src="<%= dog.url %>" class="dog-thumb"></a>
         <% end %>
-      </table>
-    <% end %>
-  </div>
-  <div id="chart" style="margin: 0 auto" class="right large-6 columns"></div>
+          <ul>
+            <li class="title text-center"><%= dog.name %></li>
+            <li class="title text-center"><%= dog.breed %></li>
+          </ul>
+      </div>
+    </div>
+  <% end %>
 </div>
