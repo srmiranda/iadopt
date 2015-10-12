@@ -19,9 +19,10 @@
     <h6 class="dtitle">Fixed: <%= @dog.fixed %></h6>
     </p>
     <h6 class="dtitle"><%= link_to @dog.shelter.name, shelter_path(@dog.shelter) %></h6>
+    <%= link_to "Back", :back, class: "shelter-button button tiny round" %>
     <% if current_user == @dog.shelter.user %>
-      <td><%= link_to "Edit", edit_dog_path(@dog), class: "shelter-button button tiny round" %></td>
-      <td><%= link_to 'Remove', @dog, method: :delete, class: "shelter-button button tiny round" %></td>
+      <%= link_to "Edit", edit_dog_path(@dog), class: "shelter-button button tiny round" %>
+      <%= link_to 'Remove', @dog, method: :delete, class: "shelter-button button tiny round" %>
     <% end %>
   </div>
 </div>
