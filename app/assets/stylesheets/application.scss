@@ -25,16 +25,121 @@ body {
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
-  padding-top: 60px;
 }
 
 .container {
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 #home-background {
   background-color: rgba(255, 255, 255, 0.5);
   padding-top: 30px;
+}
+
+.shelter-box {
+  background-image: url('/bulldog.jpg');
+  width: 1000px;
+  height: 450px;
+}
+
+.shelter-box-small {
+  background: url('/puppy.jpg') no-repeat center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 400px;
+  height: 450px;
+}
+
+.shelter-title {
+  font-family: 'Sigmar One', cursive;
+  font-size: 25pt;
+  padding: 25px;
+}
+
+.shelter-title-small {
+  font-family: 'Sigmar One', cursive;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 25pt;
+  padding: 5px;
+}
+
+.shelter-info {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 278px;
+  padding: 25px;
+}
+
+.shelter-info-small {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 314px;
+  padding: 15px;
+}
+
+.dog-thumb {
+  width: 100%;
+  margin: 5px;
+  max-height: 250px;
+}
+
+.dog-card {
+  border-radius: 25px;
+  background-color: $white;
+  padding: 25px;
+  margin: 10px;
+  height: 350px;
+  li { list-style: none; };
+  .dog-thumb {
+    width: auto;
+  };
+}
+
+.dog-image {
+  border-radius: 25px;
+  max-height: 500px;
+  max-width: 400px;
+  box-shadow: 10px 10px 20px #888888;
+  padding: 0;
+}
+
+#dog-info {
+  background: $white;
+  margin-top: 15px;
+  padding-right: 20px;
+}
+
+.dog-box {
+  border: 5px solid #98bf21;
+  padding: 35px;
+  background-color: $white;
+}
+
+.shelter-card {
+  border-radius: 25px;
+  background-color: $white;
+  padding: 25px;
+  margin: 10px;
+  height: 450px;
+  li { list-style: none; };
+  .dog-thumb {
+    width: auto;
+  };
+}
+
+.shelter-top {
+  background: $white;
+}
+
+#chart {
+  padding: 0;
+  margin: 0;
+}
+
+.owner-buttons {
+  margin-top: 10px;
 }
 
 .home-dog {
@@ -54,6 +159,17 @@ body {
   font-weight: bold;
 }
 
+.dtitle {
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+  font-size: 20pt;
+}
+
+.maintitle {
+  font-size: 25pt;
+  font-weight: bold;
+  font-family: 'Droid Sans', sans-serif;
+}
 .subheading {
   margin-top: 0;
   padding-top: 0;
@@ -108,23 +224,13 @@ body {
   }
 }
 
-.top-bar {
-  height: 60px;
-}
-
 #logo {
+  height: 40px;
   margin-left: 10px;
   margin-top: 5px;
   padding: 3px;
 }
 
-.bar-links {
-  padding-top: 10px;
-}
-
-.search {
-  margin-right: 15px;
-}
 
 .mobile-welcome {
   margin-top: 25px;
@@ -186,34 +292,6 @@ body {
   border: 1px solid $black;
 }
 
-#dog-table {
-  padding: 0;
-}
-
-.shelter-card {
-  background: #fff;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  margin-bottom: 2.5rem;
-  margin-top: 2.5rem;
-  padding: 1.75rem;
-  h3 {
-    font-weight: normal;
-    margin: 0;
-    padding: 0 0 0.5rem;
-    @media only screen and (max-width: 64em) {
-      padding-top: 1rem;
-    }
-  }
-  h6 {
-    color: #50b2d0;
-    font-size: 0.875rem;
-    font-weight: bold;
-    line-height: 1;
-    padding: 0 0 0.5rem;
-    text-transform: uppercase;
-  }
-}
-
 .shelter-image {
   margin-bottom: 15px;
 }
@@ -222,10 +300,14 @@ body {
   background-color: #98bf21;
 }
 
-.row.wide {
-  max-width: rem-calc(1200);
-}
-
 .shelter-index {
   box-shadow: 10px 10px 20px #888888;
+}
+
+.top-bar {
+  height: 60px;
+}
+
+.search {
+  margin-right: 15px;
 }

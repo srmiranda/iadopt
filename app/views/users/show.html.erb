@@ -59,30 +59,27 @@
   </div>
 </div>
 
-<% @shelters.each do |shelter| %>
-  <article class="shelter-card row wide">
-    <div class="large-6 columns">
-      <div class="row">
-        <div class="shelter-card-image small-8 small-centered large-uncentered columns">
-          <% if shelter.url.blank? %>
-            <img src="/default.jpg">
-          <% else %>
-            <img src="<%= shelter.url %>">
+<div class="small-11 small-centered columns">
+  <% @shelters.each do |shelter| %>
+    <div class="large-4 medium-6 small-11 columns">
+      <div class="text-center shelter-card">
+        <% if shelter.url.blank? %>
+          <a href="<%= shelter_path(shelter) %>"><img src="/default.jpg" class="dog-thumb"></a>
+        <% else %>
+          <a href="<%= shelter_path(shelter) %>"><img src="<%= shelter.url %>" class="dog-thumb"></a>
+        <% end %>
+          <ul>
+            <li class="title text-center"><%= shelter.name %></li>
+            <li class="title text-center"><%= shelter.address %></li>
+            <li class="title text-center"><%= shelter.city %> • <%= shelter.state %> • <%= shelter.zip %></li>
+            <li class="title text-center"><%= shelter.phone %></li>
+          </ul>
+          <% if shelter.user_id == current_user.id %>
+            <%= link_to 'Add A Dog', new_shelter_dog_path(shelter), class: "shelter-button button tiny round" %>
+            <%= link_to 'Edit Shelter', edit_shelter_path(shelter), class: "shelter-button button tiny round" %>
+            <%= link_to "Delete Shelter", shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "shelter-button button tiny round" %>
           <% end %>
-        </div>
       </div>
     </div>
-    <div class="large-6 columns" id="shelter-info">
-      <h3><%= link_to shelter.name, shelter_path(shelter) %></h3>
-      <h6><%= shelter.address %></h6>
-      <h6><%= shelter.city %>, <%= shelter.state %> <%= shelter.zip %></h6>
-      <h6><%= shelter.phone %></h6>
-      <h6><%= shelter.website %></h6>
-      <% if shelter.user_id == current_user.id %>
-        <%= link_to 'Add A Dog', new_shelter_dog_path(shelter), class: "shelter-button button tiny round" %>
-        <%= link_to 'Edit Shelter', edit_shelter_path(shelter), class: "shelter-button button tiny round" %>
-        <%= link_to "Delete Shelter", shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "shelter-button button tiny round" %>
-      <% end %>
-    </div>
-  </article>
-<% end %>
+  <% end %>
+</div>
