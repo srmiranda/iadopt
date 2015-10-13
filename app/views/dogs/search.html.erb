@@ -1,3 +1,4 @@
+<div  id="home-background" class="large-10 small-centered columns">
 <div class="row">
   <div class="preferences large-6 small-12 large-uncentered small-centered columns">
     <form action="<%= dogs_path %>" method="GET">
@@ -33,21 +34,22 @@
           <input type="radio" name="dog[fixed]" id="fixedtest" value=true>True
           <input type="radio" name="dog[fixed]" value=false>False
         </br>
-        <input class="button tiny round" type="submit" value="Submit">
-        <%= link_to "Back", :back, class: "shelter-button button tiny round" %>
+        <input class="button-dark-blue button tiny round expand" type="submit" value="Submit">
       </fieldset>
     </form>
   </div>
-
-  <div class="new-shelter-image large-5 columns">
-    <img src="/doghug.jpg" class="panel large-12 columns">
+  <div class="right large-5 large-uncentered small-centered columns">
+  <div class="new-shelter-image">
+    <img src="/doghug.jpg" class="panel large-12 columns" style="margin-bottom: 0">
     <hr />
   </div>
   <div class="row">
-    <div class="quote-box panel text-center large-5 columns">
+    <div class="quote-box panel text-center">
       <% unless @quote.nil? %>
         <%= @quote.body %>
       <% end %>
     </div>
   </div>
+</div>
+</div>
 </div>

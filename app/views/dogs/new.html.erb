@@ -2,7 +2,6 @@
   <fieldset>
   <legend>Add A Dog</legend>
     <%= form_for [@shelter, @dog] do |f| %>
-    <%= link_to "Back", shelter_path(@shelter), class: "right button tiny round" %>
 
       <%= f.label :name, 'Name' %>
       <%= f.text_area :name %>
@@ -38,7 +37,7 @@
       <%= f.text_area :url %>
 
       <hr />
-      <%= f.submit "Submit", class: "button tiny expand round" %>
+      <%= f.submit "Submit", class: "button-dark-blue button tiny expand round" %>
       <% end %>
   </fieldset>
 </div>

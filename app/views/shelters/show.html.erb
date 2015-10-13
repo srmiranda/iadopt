@@ -1,62 +1,74 @@
-<div class="shelter-box large-9 small-11 small-centered columns hide-for-small">
-  <h3 class="shelter-title"><%= @shelter.name %></h3>
-  <p class="shelter-info title">
-    <%= @shelter.address %> •
-    <%= @shelter.city %> • <%= @shelter.state %> • <%= @shelter.zip %> •
-    <%= @shelter.phone %>
-    • <%= @shelter.website %>
-  </p>
-</div>
-
-<div class="shelter-box-small show-for-small small-centered columns">
-  <h3 class="shelter-title-small"><%= @shelter.name %><h3>
-  <p class="shelter-info-small title">
-    <%= @shelter.address %> •
-    <%= @shelter.city %> • <%= @shelter.state %> • <%= @shelter.zip %> •
-    <%= @shelter.phone %>
-    • <%= @shelter.website %>
-  </p>
-</div>
-
-<div class="owner-buttons text-center small-centered columns">
-  <% if @shelter.user_id == current_user.id %>
-    </br>
-    <%= link_to 'Add A Dog', new_shelter_dog_path(@shelter), class: "shelter-button button tiny round" %>
-    <%= link_to 'Edit Shelter', edit_shelter_path(@shelter), class: "shelter-button button tiny round" %>
-    <%= link_to "Delete Shelter", @shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "shelter-button button tiny round" %>
-  <% end %>
-</div>
-</br>
-
-<div class="row">
-<div id="chart" style="margin: 0 auto" class="left large-7 small-12 large-uncentered small-centered columns"></div>
-  <div align="right" class="gmap large-5 small-12 large-uncentered small-centered columns">
-    <iframe
-     width="375"
-     height="400"
-     frameborder="0" style="border:0"
-     src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_KEY'] %>
-      &q=<%= @shelter.address %>,<%= @shelter.city %>,<%= @shelter.state %>
-      &attribution_source=Google+Maps+Embed+API
-      &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @shelter.address %>, <%= @shelter.city %>, <%= @shelter.state %>">
-    </iframe>
+<div id="home-background" class="large-10 small-centered columns clearfix">
+  <div class="shelter-box large-9 small-11 small-centered columns hide-for-small">
+    <h3 class="shelter-title"><%= @shelter.name %></h3>
+    <p class="shelter-info title">
+      <%= @shelter.address %> •
+      <%= @shelter.city %> • <%= @shelter.state %> • <%= @shelter.zip %> •
+      <%= @shelter.phone %>
+      <% unless @shelter.website.blank? %>
+        • <%= @shelter.website %>
+      <% end %>
+      <% unless @shelter.email.blank? %>
+        • <%= @shelter.email %>
+      <% end %>
+    </p>
   </div>
-</div>
 
-<div class="small-11 small-centered columns">
-  <% @dogs.each do |dog| %>
-    <div class="large-4 medium-6 small-12 columns">
-      <div class="text-center dog-card">
-        <% if dog.url.blank? %>
-          <a href="<%= dog_path(dog) %>"><img src="/default_dog.jpg" class="dog-thumb"></a>
-        <% else %>
-          <a href="<%= dog_path(dog) %>"><img src="<%= dog.url %>" class="dog-thumb"></a>
-        <% end %>
-          <ul>
-            <li class="title text-center"><%= dog.name %></li>
-            <li class="title text-center"><%= dog.breed %></li>
-          </ul>
-      </div>
+  <div class="shelter-box-small show-for-small small-centered columns">
+    <h3 class="shelter-title-small"><%= @shelter.name %><h3>
+    <p class="shelter-info-small title">
+      <%= @shelter.address %> •
+      <%= @shelter.city %> • <%= @shelter.state %> • <%= @shelter.zip %> •
+      <%= @shelter.phone %>
+      <% if @shelter.website %>
+        • <%= @shelter.website %>
+      <% end %>
+      <% unless @shelter.email.blank? %>
+        • <%= @shelter.email %>
+      <% end %>
+    </p>
+  </div>
+
+  <div class="owner-buttons text-center small-centered columns">
+    <% if @shelter.user_id == current_user.id %>
+      </br>
+      <%= link_to 'Add A Dog', new_shelter_dog_path(@shelter), class: "button-dark-blue button tiny round" %>
+      <%= link_to 'Edit Shelter', edit_shelter_path(@shelter), class: "button-dark-blue button tiny round" %>
+      <%= link_to "Delete Shelter", @shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "button-dark-blue button tiny round" %>
+    <% end %>
+  </div>
+  </br>
+
+  <div class="row">
+  <div id="chart" style="margin: 0 auto" class="left large-7 small-12 large-uncentered small-centered columns"></div>
+    <div align="right" class="large-5 small-12 large-uncentered small-centered columns" id="gmap">
+      <iframe
+       width="375"
+       height="400"
+       frameborder="0" style="border:0"
+       src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_KEY'] %>
+        &q=<%= @shelter.address %>,<%= @shelter.city %>,<%= @shelter.state %>
+        &attribution_source=Google+Maps+Embed+API
+        &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @shelter.address %>, <%= @shelter.city %>, <%= @shelter.state %>">
+      </iframe>
     </div>
-  <% end %>
+  </div>
+
+  <div class="small-11 small-centered columns">
+    <% @dogs.each do |dog| %>
+      <div class="large-4 medium-6 small-12 columns">
+        <div class="text-center dog-card">
+          <% if dog.url.blank? %>
+            <a href="<%= dog_path(dog) %>"><img src="/default_dog.jpg" class="dog-thumb"></a>
+          <% else %>
+            <a href="<%= dog_path(dog) %>"><img src="<%= dog.url %>" class="dog-thumb"></a>
+          <% end %>
+            <ul>
+              <li class="title text-center"><%= dog.name %></li>
+              <li class="title text-center"><%= dog.breed %></li>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

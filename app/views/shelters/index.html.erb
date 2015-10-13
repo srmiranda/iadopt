@@ -1,3 +1,4 @@
+<div id="home-background" class="large-10 small-centered columns clearfix">
 <div class="text-center shelter-banner">
   <img src="/shelter_banner1.jpg">
 </div>
@@ -8,7 +9,7 @@
     <div class="large-4 medium-6 small-11 columns">
       <div class="text-center shelter-card">
         <% if shelter.url.blank? %>
-          <a href="<%= shelter_path(shelter) %>"><img src="/default.jpg" class="dog-thumb"></a>
+          <a href="<%= shelter_path(shelter) %>"><img src="/dog5.png" class="dog-thumb"></a>
         <% else %>
           <a href="<%= shelter_path(shelter) %>"><img src="<%= shelter.url %>" class="dog-thumb"></a>
         <% end %>
@@ -21,4 +22,5 @@
       </div>
     </div>
   <% end %>
+</div>
 </div>

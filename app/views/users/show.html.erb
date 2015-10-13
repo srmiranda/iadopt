@@ -45,7 +45,7 @@
 
         <div class="actions">
           <div class="right large-4 medium-8 small-12 columns">
-            <%= f.submit "Update", class: "right small round button" %>
+            <%= f.submit "Update", class: "button-dark-blue right small round button" %>
           </div>
         </div>
       </fieldset>
@@ -63,7 +63,7 @@
     <div class="large-4 medium-6 small-11 columns">
       <div class="text-center shelter-card">
         <% if shelter.url.blank? %>
-          <a href="<%= shelter_path(shelter) %>"><img src="/default.jpg" class="dog-thumb"></a>
+          <a href="<%= shelter_path(shelter) %>"><img src="/dog5.png" class="dog-thumb"></a>
         <% else %>
           <a href="<%= shelter_path(shelter) %>"><img src="<%= shelter.url %>" class="dog-thumb"></a>
         <% end %>
@@ -74,9 +74,8 @@
             <li class="title text-center"><%= shelter.phone %></li>
           </ul>
           <% if shelter.user_id == current_user.id %>
-            <%= link_to 'Add A Dog', new_shelter_dog_path(shelter), class: "shelter-button button tiny round" %>
-            <%= link_to 'Edit Shelter', edit_shelter_path(shelter), class: "shelter-button button tiny round" %>
-            <%= link_to "Delete Shelter", shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "shelter-button button tiny round" %>
+            <%= link_to 'Edit Shelter', edit_shelter_path(shelter), class: "button-blue button tiny round" %>
+            <%= link_to "Delete Shelter", shelter, data: { confirm: "Are you sure?" }, method: :delete, class: "button-blue button tiny round" %>
           <% end %>
       </div>
     </div>
