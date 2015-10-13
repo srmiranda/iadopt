@@ -7,10 +7,10 @@
       <%= f.text_area :name %>
 
       <%= f.label :breed, 'Breed' %>
-      <%= f.select :breed, options_for_select(Dog::BREEDS) %>
+      <%= f.select :breed, options_for_select(Dog::BREEDS, @dog.breed) %>
 
       <%= f.label :size %>
-      <%= f.select(:size, options_for_select(['', 'small', 'medium', 'large'])) %>
+      <%= f.select(:size, options_for_select(['', 'small', 'medium', 'large'], @dog.size)) %>
 
       <%= f.label :kids, "Good with Kids:" %>
       <%= f.radio_button(:kids, true) %>
