@@ -1,13 +1,13 @@
 <div class="parent2">
   <% if current_user %>
-  <a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow" title="Sign Out"><div class="test1"><i class="fa fa-remove fa-2x"></i></div></a>
-  <a href="<%= user_path(current_user) %>" title="Profile"><div class="test2"><i class="fa fa-user fa-2x"></i></div></a>
-  <a href="<%= shelters_path %>" title="All Shelters"><div class="test3"><i class="fa fa-eye fa-2x"></i></div></a>
-  <a href="<%= root_path %>" title="Home"><div class="test4"><i class="fa fa-home fa-2x"></i></div></a>
-  <div class="mask2"><i><img src="/paw_logo_white.png" style="width: 75px; padding-bottom: 25px"></i></div>
+    <a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow" title="Sign Out"><div class="test1"><i class="fa fa-remove fa-2x"></i></div></a>
+    <a href="<%= user_path(current_user) %>" title="Profile"><div class="test2"><i class="fa fa-user fa-2x"></i></div></a>
+    <a href="<%= shelters_path %>" title="All Shelters"><div class="test3"><i class="fa fa-eye fa-2x"></i></div></a>
+    <a href="<%= root_path %>" title="Home"><div class="test4"><i class="fa fa-home fa-2x"></i></div></a>
+    <div class="mask2"><i><img src="/paw_logo_white.png" style="width: 75px; padding-bottom: 25px"></i></div>
   <% else %>
-  <a href="<%= new_user_registration_path %>" title="Sign Up"><div class="test3"><i class="fa fa-pencil-square-o fa-2x"></i></div></a>
-  <a href="<%= new_user_session_path %>" title="Sign In"><div class="test4"><i class="fa fa-pencil fa-2x"></i></div></a>
-  <div class="mask2"><i><img src="/paw_logo_white.png" style="width: 75px; padding-bottom: 25px"></i></div>
+    <a href="<%= new_user_registration_path %>" title="Sign Up"><div class="test3"><i class="fa fa-pencil-square-o fa-2x"></i></div></a>
+    <a href="<%= new_user_session_path %>" title="Sign In"><div class="test4"><i class="fa fa-pencil fa-2x"></i></div></a>
+    <div class="mask2"><i><img src="/paw_logo_white.png" style="width: 75px; padding-bottom: 25px"></i></div>
   <% end %>
 </div>
