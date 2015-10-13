@@ -1,4 +1,5 @@
 $(function () {
+  $.ajaxSetup({ cache: false });
   $.ajax({
       method: 'GET',
       url: window.location.href,
