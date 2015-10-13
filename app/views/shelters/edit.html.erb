@@ -2,7 +2,6 @@
   <fieldset>
   <legend>Update Your Shelter</legend>
     <%= form_for @shelter do |f| %>
-    <%= link_to "Back", shelter_path(@shelter), class: "right button tiny round" %>
 
       <%= f.label :name, "Name of your organization:" %>
       <%= f.text_area :name %>
@@ -31,7 +30,7 @@
       <%= f.label :url, "Picture (optional)" %>
       <%= f.text_area :url %>
 
-      <%= f.submit "Submit", class: "button tiny expand round" %>
+      <%= f.submit "Submit", class: "button tiny expand round shelter-button" %>
       <% end %>
   </fieldset>
 </div>
