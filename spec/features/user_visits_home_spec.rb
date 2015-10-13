@@ -10,7 +10,7 @@ feature 'user signs in', %{
 
     visit root_path
 
-    expect(page).to have_content('Sign In')
+    expect(page).to have_link('Sign In')
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
@@ -23,7 +23,7 @@ feature 'user signs in', %{
   scenario 'visit home page and sign up' do
     visit root_path
 
-    expect(page).to have_content('Sign Up')
+    expect(page).to have_link('Sign Up')
 
     click_link 'Sign Up'
 

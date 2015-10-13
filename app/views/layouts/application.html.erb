@@ -13,11 +13,11 @@
 <body>
   <%- flash.each do |key, value| -%>
     <% if key == 'notice' %>
-      <div class="alert-box success radius flash-<%= key %>">
+      <div class="alert-box success radius flash-<%= key %> text-center">
         <%= value %>
       </div>
     <% else %>
-      <div class="alert-box alert radius flash-<%= key %>">
+      <div class="alert-box alert radius flash-<%= key %> text-center">
         <%= value %>
       </div>
     <% end %>
