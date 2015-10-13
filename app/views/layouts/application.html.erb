@@ -7,16 +7,17 @@
   <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="animate.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
   <%- flash.each do |key, value| -%>
     <% if key == 'notice' %>
-      <div class="alert-box success radius flash-<%= key %>">
+      <div class="alert-box success radius flash-<%= key %> text-center">
         <%= value %>
       </div>
     <% else %>
-      <div class="alert-box alert radius flash-<%= key %>">
+      <div class="alert-box alert radius flash-<%= key %> text-center">
         <%= value %>
       </div>
     <% end %>
