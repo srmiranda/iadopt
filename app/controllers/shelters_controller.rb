@@ -44,7 +44,7 @@ class SheltersController < ApplicationController
           end
 
           dog_hash.each do |key, value|
-            dog_array << {name: key, y: value}
+            dog_array << { name: key, y: value }
           end
 
           render json: [dog_array]
