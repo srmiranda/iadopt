@@ -1,51 +1,54 @@
-<div class="row">
-  <div class="preferences large-6 small-12 large-uncentered small-centered columns">
-    <fieldset>
-    <legend>Register A Shelter</legend>
-      <%= form_for([@user, @shelter]) do |f| %>
-
-        <%= f.label :name, "Name of your organization:" %>
-        <%= f.text_area :name %>
-
-        <%= f.label :address %>
-        <%= f.text_area :address %>
-
-        <%= f.label :city %>
-        <%= f.text_area :city %>
-
-        <%= f.label :state %>
-        <%= f.text_area :state %>
-
-        <%= f.label :zip %>
-        <%= f.number_field :zip %>
-
-        <%= f.label :phone %>
-        <%= f.text_area :phone %>
-
-        <%= f.label :website, "Website URL (optional)"%>
-        <%= f.text_area :website %>
-
-        <%= f.label :email, "Contact Email (optional)" %>
-        <%= f.text_area :email %>
-
-        <%= f.label :url, "Picture (optional)" %>
-        <%= f.text_area :url %>
-
-        <%= f.submit "Submit", class: "button tiny round" %>
-        <%= link_to "Back", :back, class: "shelter-button button tiny round" %>
-        <% end %>
-    </fieldset>
-  </div>
-
-  <div class="new-shelter-image large-5 columns">
-    <img src="/dog1.jpg" class="panel large-12 columns">
-    <hr />
-  </div>
+<div  id="home-background" class="large-10 small-centered columns">
   <div class="row">
-    <div class="quote-box panel text-center large-5 columns">
-      <% unless @quote.nil? %>
-        <%= @quote.body %>
-      <% end %>
+    <div class="preferences large-6 small-12 large-uncentered small-centered columns">
+      <fieldset>
+      <legend>Register A Shelter</legend>
+        <%= form_for([@user, @shelter]) do |f| %>
+
+          <%= f.label :name, "Name of your organization:" %>
+          <%= f.text_area :name %>
+
+          <%= f.label :address %>
+          <%= f.text_area :address %>
+
+          <%= f.label :city %>
+          <%= f.text_area :city %>
+
+          <%= f.label :state %>
+          <%= f.text_area :state %>
+
+          <%= f.label :zip %>
+          <%= f.number_field :zip %>
+
+          <%= f.label :phone %>
+          <%= f.text_area :phone %>
+
+          <%= f.label :website, "Website URL (optional)"%>
+          <%= f.text_area :website %>
+
+          <%= f.label :email, "Contact Email (optional)" %>
+          <%= f.text_area :email %>
+
+          <%= f.label :url, "Picture (optional)" %>
+          <%= f.text_area :url %>
+
+          <%= f.submit "Submit", class: "button-dark-blue button tiny round expand" %>
+          <% end %>
+      </fieldset>
+    </div>
+
+    <div class="right large-5 large-uncentered small-centered columns">
+      <div class="new-shelter-image">
+        <img src="/dog3.jpg" class="panel large-12 columns" style="margin-bottom: 0">
+        <hr />
+      </div>
+      <div class="row">
+        <div class="quote-box panel text-center">
+          <% unless @quote.nil? %>
+            <%= @quote.body %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
