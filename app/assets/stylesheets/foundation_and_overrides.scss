@@ -462,6 +462,7 @@ $include-html-global-classes: $include-html-classes;
 // $button-function-factor: -20%;
 $light-background: #D0E0EB;
 $blue: #88ABC2;
+$dark-blue: #49708A;
 
 
 // We use these to control button border styles.
@@ -1404,8 +1405,8 @@ $button-bg-hover: $blue;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: $blue;
+$topbar-bg: $blue;
 
 // Height and margin
 // $topbar-height: rem-calc(45);
@@ -1424,7 +1425,7 @@ $button-bg-hover: $blue;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: $jet;
+$topbar-link-bg-hover: $dark-blue;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
@@ -1437,7 +1438,7 @@ $button-bg-hover: $blue;
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
+$topbar-dropdown-bg: $blue;
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 // $topbar-dropdown-link-bg: $oil;

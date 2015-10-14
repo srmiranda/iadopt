@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Iadopt</title>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="animate.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body>
-  <%- flash.each do |key, value| -%>
-    <% if key == 'notice' %>
-      <div class="alert-box success radius flash-<%= key %> text-center">
-        <%= value %>
-      </div>
-    <% else %>
-      <div class="alert-box alert radius flash-<%= key %> text-center">
-        <%= value %>
-      </div>
-    <% end %>
-  <%- end -%>
-  <%= render "layouts/topbar" %>
+  <head>
+    <title>Iadopt</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <%- flash.each do |key, value| -%>
+      <% if key == 'notice' %>
+        <div class="alert-box success radius flash-<%= key %> text-center">
+          <%= value %>
+        </div>
+      <% else %>
+        <div class="alert-box alert radius flash-<%= key %> text-center">
+          <%= value %>
+        </div>
+      <% end %>
+    <%- end -%>
+    <%= render "layouts/topbar" %>
 
-  <div class="container">
-    <%= yield %>
-  </div>
+    <div class="container">
+      <%= yield %>
+    </div>
 
-  <%= javascript_include_tag 'application' %>
-  <%= yield :extra_footer %>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-</body>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :extra_footer %>
+
+    <script>
+      $(document).ready(function() {
+        setTimeout(function(){
+          $(".alert-box").fadeOut("slow", function() {
+            $(this).remove();
+          })
+        }, 3000);
+      $(".parent2").trigger("mousedown");
+      });
+
+
+    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  </body>
 </html>

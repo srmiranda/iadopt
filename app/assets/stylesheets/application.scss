@@ -22,11 +22,6 @@ $black: #000;
 $blue: #88ABC2;
 
 body {
-  // background: url("/sunny_day.jpg") no-repeat center center fixed;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // -webkit-background-size: cover;
-  // background-size: cover;
   background-color: $background;
 }
 
@@ -41,7 +36,9 @@ body {
 
 .shelter-box {
   background-image: url('/bulldog.jpg');
-  width: 1000px;
+  background-size: cover;
+  background-position: center;
+  width: auto;
   height: 450px;
 }
 
@@ -78,7 +75,7 @@ body {
 .shelter-info-small {
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
-  margin-top: 314px;
+  margin-top: 240px;
   padding: 15px;
 }
 
@@ -139,6 +136,10 @@ body {
 
 .shelter-top {
   background: $white;
+}
+
+.subheader {
+  font-family: 'Droid Sans', sans-serif;
 }
 
 #chart {
@@ -208,6 +209,8 @@ body {
 }
 
 .quote-box {
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
   box-shadow: 10px 10px 20px #888888;
   margin-left: 10px;
   margin-right: 10px;
@@ -242,7 +245,8 @@ body {
 }
 
 #logo {
-  height: 40px;
+  height: 35px;
+  width: auto;
   margin-left: 10px;
   margin-top: 5px;
   padding: 3px;
@@ -266,7 +270,6 @@ body {
 }
 
 .sign-in-links a {
-  background-color: rgba(255, 255, 255, 0.5);
   color: $black;
   font-weight: bold;
 }
@@ -322,7 +325,7 @@ body {
 }
 
 .top-bar {
-  height: 60px;
+
 }
 
 .search {
@@ -331,10 +334,16 @@ body {
 
 .button-blue {
   background-color: $blue;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+
 }
 
 .button-dark-blue {
-  background-color: #49708A;
+  background-color: $background;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+
 }
 
 .parent2 {
