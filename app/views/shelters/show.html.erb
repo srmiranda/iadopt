@@ -1,5 +1,5 @@
 <div id="home-background" class="large-10 small-centered columns clearfix">
-  <div class="shelter-box large-9 small-11 small-centered columns hide-for-small">
+  <div class="shelter-box large-9 medium-10 small-11 small-centered columns hide-for-small">
     <h3 class="shelter-title"><%= @shelter.name %></h3>
     <p class="shelter-info title">
       <%= @shelter.address %> •
@@ -14,13 +14,13 @@
     </p>
   </div>
 
-  <div class="shelter-box-small show-for-small small-centered columns">
+  <div class="shelter-box-small show-for-small small-12 small-centered columns">
     <h3 class="shelter-title-small"><%= @shelter.name %><h3>
     <p class="shelter-info-small title">
       <%= @shelter.address %> •
       <%= @shelter.city %> • <%= @shelter.state %> • <%= @shelter.zip %> •
       <%= @shelter.phone %>
-      <% if @shelter.website %>
+      <% unless @shelter.website.blank? %>
         • <%= @shelter.website %>
       <% end %>
       <% unless @shelter.email.blank? %>
