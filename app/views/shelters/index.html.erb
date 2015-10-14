@@ -4,9 +4,27 @@
 </div>
 
 </br>
+
+<div>
+  <ul class="text-center">
+    <li class="search">
+      <div class="row collapse">
+        <div class="large-9 small-9 columns">
+          <%= form_tag(shelters_path, :method => "get") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Shelter Name" %>
+        </div>
+        <div class="large-3 small-3 columns">
+          <%= submit_tag "Search", :name => nil, class: "button-dark-blue tiny round button" %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
 <div class="small-11 small-centered columns">
   <% @shelters.each do |shelter| %>
-    <div class="large-4 medium-6 small-11 columns">
+    <div class="large-4 medium-6 small-12 columns">
       <div class="text-center shelter-card">
         <% if shelter.url.blank? %>
           <a href="<%= shelter_path(shelter) %>"><img src="/dog5.png" class="dog-thumb"></a>
@@ -22,5 +40,6 @@
       </div>
     </div>
   <% end %>
+</div>
 </div>
 </div>
