@@ -35,6 +35,7 @@ body {
 }
 
 .shelter-box {
+  position: relative;
   background-image: url('/bulldog.jpg');
   background-size: cover;
   background-position: center;
@@ -43,6 +44,7 @@ body {
 }
 
 .shelter-box-small {
+  position: relative;
   background: url('/puppy.jpg') no-repeat center;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -68,15 +70,21 @@ body {
 
 .shelter-info {
   background-color: rgba(255, 255, 255, 0.5);
-  margin-top: 278px;
+  margin-bottom: 0;
   padding: 25px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .shelter-info-small {
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
-  margin-top: 240px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   padding: 15px;
+  margin: 0;
 }
 
 #gmap {
