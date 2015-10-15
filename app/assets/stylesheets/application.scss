@@ -50,7 +50,8 @@ body {
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
-  width: 400px;
+  padding: 0;
+  width: auto;
   height: 450px;
 }
 
@@ -90,6 +91,7 @@ body {
 #gmap {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .dog-thumb {

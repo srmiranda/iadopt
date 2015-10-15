@@ -1,5 +1,5 @@
-<div id="home-background" class="large-10 small-centered columns clearfix">
-  <div class="shelter-box large-9 medium-10 small-11 small-centered columns hide-for-small">
+<div id="home-background" class="large-10 small-12 small-centered columns clearfix">
+  <div class="shelter-box large-9 medium-10 small-12 small-centered columns hide-for-small">
     <h3 class="shelter-title"><%= @shelter.name %></h3>
     <p class="shelter-info large-12 title">
       <%= @shelter.address %> •
@@ -15,8 +15,8 @@
   </div>
 
   <div class="shelter-box-small show-for-small small-12 small-centered columns">
-    <h3 class="shelter-title-small"><%= @shelter.name %><h3>
-    <p class="shelter-info-small title">
+    <h3 class="shelter-title-small small-12"><%= @shelter.name %><h3>
+    <p class="shelter-info-small title small-12">
       <%= @shelter.address %> •
       <%= @shelter.city %> • <%= @shelter.state %> • <%= @shelter.zip %> •
       <%= @shelter.phone %>
@@ -43,9 +43,9 @@
   <div id="chart" style="margin: 0 auto" class="left large-7 small-12 large-uncentered small-centered columns"></div>
     <div align="right" class="large-5 small-12 large-uncentered small-centered columns" id="gmap">
       <iframe
-       width="375"
+       width="350"
        height="400"
-       frameborder="0" style="border:0"
+       frameborder="0" style="border:0;"
        src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_KEY'] %>
         &q=<%= @shelter.address %>,<%= @shelter.city %>,<%= @shelter.state %>
         &attribution_source=Google+Maps+Embed+API
