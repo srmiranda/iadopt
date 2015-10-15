@@ -443,3 +443,16 @@ body {
   list-style: none;
   display: inline-block;
 }
+
+input.input-field {
+  border: none;
+  border: 1px solid #ccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+
+}
+
+.panel {
+  border-radius: 5px;
+}
