@@ -1,7 +1,13 @@
 class SheltersController < ApplicationController
+
   def index
     if params[:search]
       @shelters = Shelter.search(params[:search])
+    elsif params[:zip]
+      @zipcode = params["zip"]["zipcode"]
+      @distance = params["zip"]["distance"]
+      @zip = Zip.zip_codes_near(@zipcode, @distance)
+      @shelters = Shelter.where(zip: @zip)
     else
       @shelters = Shelter.order(name: :asc)
     end

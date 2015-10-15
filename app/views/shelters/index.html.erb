@@ -1,45 +1,51 @@
 <div id="home-background" class="large-10 small-centered columns clearfix">
-<div class="text-center shelter-banner">
-  <img src="/shelter_banner1.jpg" style="border-radius: 5px;">
-</div>
+  <div class="text-center shelter-banner">
+    <img src="/shelter_banner1.jpg" style="border-radius: 5px;">
+  </div>
 
-</br>
+  </br>
+  <div class="preferences large-8 small-centered columns" style="padding: 10px; padding-top: 5px; border-radius: 5px;">
+    <form action="<%= shelters_path %>" method="GET">
+      <fieldset class="preferences " style="border-radius: 5px;">
+        <legend>Find A Shelter Near You</legend>
 
-<div>
-  <ul class="text-center">
-    <li class="search">
-      <div class="row collapse">
-        <div class="large-9 small-9 columns">
-          <%= form_tag(shelters_path, :method => "get") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Shelter Name", class: "input-field" %>
-        </div>
-        <div class="large-3 small-3 columns">
-          <%= submit_tag "Search", :name => nil, class: "button-dark-blue tiny round button", style: "margin-left: 5px;" %>
+          <label>Zip Code:</label>
+          <input class="input-field" type="text" name="zip[zipcode]">
+
+          <label>Distance:</label>
+          <select name="zip[distance]">
+            <option value=""></option>
+            <option value=1>1 Mile</option>
+            <option value=5>5 Miles</option>
+            <option value=10>10 Miles</option>
+            <option value=25>25 Miles</option>
+            <option value=50>50 Miles</option>
+          </select>
+          <hr />
+
+        <input class="button-dark-blue button tiny round expand" type="submit" value="Submit">
+      </fieldset>
+    </form>
+  </div>
+  </br>
+
+  <div class="small-11 small-centered columns">
+    <% @shelters.each do |shelter| %>
+      <div class="large-4 medium-6 small-12 columns">
+        <div class="text-center shelter-card">
+          <% if shelter.url.blank? %>
+            <a href="<%= shelter_path(shelter) %>"><img src="/dog5.png" class="dog-thumb"></a>
+          <% else %>
+            <a href="<%= shelter_path(shelter) %>"><img src="<%= shelter.url %>" class="dog-thumb"></a>
           <% end %>
+            <ul>
+              <li class="title text-center"><%= shelter.name %></li>
+              <li class="title text-center"><%= shelter.address %></li>
+              <li class="title text-center"><%= shelter.city %> • <%= shelter.state %> • <%= shelter.zip %></li>
+              <li class="title text-center"><%= shelter.phone %></li>
+            </ul>
         </div>
       </div>
-    </li>
-  </ul>
-</div>
-
-<div class="small-11 small-centered columns">
-  <% @shelters.each do |shelter| %>
-    <div class="large-4 medium-6 small-12 columns">
-      <div class="text-center shelter-card">
-        <% if shelter.url.blank? %>
-          <a href="<%= shelter_path(shelter) %>"><img src="/dog5.png" class="dog-thumb"></a>
-        <% else %>
-          <a href="<%= shelter_path(shelter) %>"><img src="<%= shelter.url %>" class="dog-thumb"></a>
-        <% end %>
-          <ul>
-            <li class="title text-center"><%= shelter.name %></li>
-            <li class="title text-center"><%= shelter.address %></li>
-            <li class="title text-center"><%= shelter.city %> • <%= shelter.state %> • <%= shelter.zip %></li>
-            <li class="title text-center"><%= shelter.phone %></li>
-          </ul>
-      </div>
-    </div>
-  <% end %>
-</div>
-</div>
+    <% end %>
+  </div>
 </div>
