@@ -1,6 +1,6 @@
 <div id="home-background" class="large-10 small-centered columns clearfix">
 <div class="text-center shelter-banner">
-  <img src="/shelter_banner1.jpg">
+  <img src="/shelter_banner1.jpg" style="border-radius: 5px;">
 </div>
 
 </br>
@@ -11,10 +11,10 @@
       <div class="row collapse">
         <div class="large-9 small-9 columns">
           <%= form_tag(shelters_path, :method => "get") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Shelter Name" %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Shelter Name", class: "input-field" %>
         </div>
         <div class="large-3 small-3 columns">
-          <%= submit_tag "Search", :name => nil, class: "button-dark-blue tiny round button" %>
+          <%= submit_tag "Search", :name => nil, class: "button-dark-blue tiny round button", style: "margin-left: 5px;" %>
           <% end %>
         </div>
       </div>

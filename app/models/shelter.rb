@@ -16,6 +16,7 @@ class Shelter < ActiveRecord::Base
   validates :user_id, presence: true
 
   def self.search(query)
+    query = query.capitalize
     where("name like ?", "%#{query}%")
   end
 end
