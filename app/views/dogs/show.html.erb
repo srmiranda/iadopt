@@ -1,6 +1,6 @@
-<div class="dog-box row large-10 small-12 small-centered columns">
-  <div class="left">
-    <div class="small-centered columns">
+<div class="dog-box row small-centered columns">
+  <div class="left large-6 medium-11 small-centered columns">
+    <div class="large-12 medium-11 small-centered columns">
       <% if @dog.url.blank? %>
         <img src="/default_dog.jpg" class="dog-image large-uncentered small-centered columns">
       <% else %>
@@ -8,7 +8,7 @@
       <% end %>
     </div>
   </div>
-  <div class="right" id="dog-info">
+  <div class="right large-6 medium-11" id="dog-info">
     <p>
     <h3 class="maintitle"><%= @dog.name %></h3>
     <h6 class="dtitle">Breed: <%= @dog.breed %></h6>
